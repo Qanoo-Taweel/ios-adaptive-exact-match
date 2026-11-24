@@ -1,0 +1,18 @@
+{
+  "name": "ios-adaptive-exact-match",
+  "version": "1.0.0",
+  "description": "IoS component sequence.pattern-match.exact: 12 exact pattern matching atoms and an adaptive ExactMatch molecule with a calibrated cost model",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "bin": { "ios": "bin/ios.js" },
+  "scripts": {
+    "test": "node --test \"tests/unit/**/*.test.js\"",
+    "test:bench": "node --test \"tests/benchmarks/**/*.test.js\"",
+    "calibrate": "node bench/calibrate.js",
+    "bench": "node bench/validate.js",
+    "figures": "node bench/figures.js",
+    "site": "node scripts/build-site.js",
+    "report": "node scripts/build-report.js"
+  }
+}
