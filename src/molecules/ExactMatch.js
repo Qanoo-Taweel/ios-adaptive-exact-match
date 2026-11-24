@@ -103,3 +103,5 @@ export class ExactMatch {
     yield* this.atom.process(entry);
   }
 }
+
+export default ExactMatch;

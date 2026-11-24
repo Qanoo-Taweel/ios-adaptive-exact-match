@@ -29,7 +29,7 @@ export class BoyerMooreSearch extends ExactSearchAtom {
     this.preps = patterns.map((p) => prepareBoyerMoore(encodePattern(p, this.alpha), this.alpha.size));
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     const n = text.length;
     const t = encodeText(text, this.alpha);
     for (let u = 0; u < this.preps.length; u++) {

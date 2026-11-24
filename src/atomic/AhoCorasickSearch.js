@@ -27,7 +27,7 @@ export class AhoCorasickSearch extends ExactSearchAtom {
     this.prep = prepareAhoCorasick(patterns.map((p) => encodePattern(p, this.alpha)), this.alpha.size);
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     const t = encodeText(text, this.alpha);
     searchAhoCorasick(t, text.length, this.prep, (u, pos) => hits.add(u, pos));
   }

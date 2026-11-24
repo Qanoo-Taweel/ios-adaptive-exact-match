@@ -28,7 +28,7 @@ export class WuManberSearch extends ExactSearchAtom {
     this.prep = prepareWuManber(patterns.map((p) => encodePattern(p, this.alpha)), this.alpha.size);
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     if (this.prep.lmin > text.length && this.unique.every((p) => p.length > text.length)) return;
     const t = encodeText(text, this.alpha);
     searchWuManber(t, text.length, this.prep, (u, pos) => hits.add(u, pos));

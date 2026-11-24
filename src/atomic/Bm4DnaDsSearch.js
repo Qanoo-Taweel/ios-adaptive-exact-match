@@ -29,7 +29,7 @@ export class Bm4DnaDsSearch extends ExactSearchAtom {
     this.preps = patterns.map((p) => prepareDS(encodePattern(p, this.alpha), this.alpha.size));
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     const n = text.length;
     // One encoded buffer with a sentinel zone of mMax cells; before each
     // pattern the zone is refilled with that pattern's last code.

@@ -7,9 +7,9 @@ export const TASK = 'sequence.pattern-match.exact';
  * ExactSearchAtom: common base of every atom of task `sequence.pattern-match.exact`.
  *
  * PATTERN: Template Method. `process()` is the fixed algorithm skeleton
- *   (validate entry → fold case → call the hook `search()` → order and emit).
+ *   (validate entry → fold case → call the hook `findAll()` → order and emit).
  *   Subclasses only fill in two hooks: `prepare(patterns)` (once, in the
- *   constructor) and `search(text, hits)` (per entry).
+ *   constructor) and `findAll(text, hits)` (per entry).
  * PATTERN: Strategy. Every subclass is an interchangeable strategy for the same
  *   task; the molecule talks only to this type.
  * SOLID (L, Liskov): any subclass can replace any other; contract tests run on
@@ -80,12 +80,12 @@ export class ExactSearchAtom {
   prepare(_patterns) { /* overridden by subclasses */ }
 
   /**
-   * Hook: find every occurrence of every unique pattern in `text` and report
+   * Hook findAll(): find every occurrence of every unique pattern in `text` and report
    * it with `hits.add(uniqueIndex, position)`. Order does not matter.
    * @abstract
    */
-  search(_text, _hits) {
-    throw new Error(`${this.constructor.name}.search() is not implemented`);
+  findAll(_text, _hits) {
+    throw new Error(`${this.constructor.name}.findAll() is not implemented`);
   }
 
   /** Template method. Produces Sequence.Match objects for one FASTA.Entry. */
@@ -97,7 +97,7 @@ export class ExactSearchAtom {
     const text = this.ignoreCase ? foldAscii(entry.seq) : entry.seq;
     if (text.length === 0) return;
     const hits = new HitCollector(this.original.length, this.owners);
-    this.search(text, hits);
+    this.findAll(text, hits);
     const pats = this.original;
     for (const [position, idx] of hits.ordered()) {
       yield { header, pattern: pats[idx], position, length: pats[idx].length };

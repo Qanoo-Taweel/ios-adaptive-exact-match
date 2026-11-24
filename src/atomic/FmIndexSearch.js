@@ -27,7 +27,7 @@ export class FmIndexSearch extends ExactSearchAtom {
     this.encoded = patterns.map((p) => encodePattern(p, this.alpha));
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     const n = text.length;
     if (this.unique.every((p) => p.length > n)) return;
     const t = encodeText(text, this.alpha);

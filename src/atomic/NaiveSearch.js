@@ -19,7 +19,7 @@ export class NaiveSearch extends ExactSearchAtom {
     applicable() { return 'reference oracle (O(n·m) brute force); used only for testing or when forced'; },
   };
 
-  search(text, hits) {
+  findAll(text, hits) {
     const pats = this.unique;
     for (let u = 0; u < pats.length; u++) searchNaive(text, pats[u], (pos) => hits.add(u, pos));
   }

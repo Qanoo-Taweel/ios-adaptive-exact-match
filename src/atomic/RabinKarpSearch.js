@@ -27,7 +27,7 @@ export class RabinKarpSearch extends ExactSearchAtom {
     this.prep = prepareRabinKarp(patterns.map((p) => encodePattern(p, this.alpha)));
   }
 
-  search(text, hits) {
+  findAll(text, hits) {
     const t = encodeText(text, this.alpha);
     searchRabinKarp(t, text.length, this.prep, (u, pos) => hits.add(u, pos));
   }
