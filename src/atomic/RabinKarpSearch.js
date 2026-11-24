@@ -18,7 +18,7 @@ export class RabinKarpSearch extends ExactSearchAtom {
 
   static selection = {
     features: rabinKarpFeatures,
-    defaults: { enc: 2e-9, scan: 3e-9, verify: 2e-9, prep: 2e-9, out: 6e-8 },
+    defaults: { enc: 2e-9, scan: 3e-9, probe: 3e-9, prep: 2e-9, out: 6e-8 },
     applicable() { return true; },
   };
 

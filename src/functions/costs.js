@@ -34,7 +34,22 @@ export function expectedMatches(shape, p) {
   return (n - m + 1) * prob;
 }
 
+/** Per-shape memo (non-enumerable), so 11 atoms do not repeat shared work. */
+function memo(shape, key, fn) {
+  if (!Object.prototype.hasOwnProperty.call(shape, '_memo')) {
+    if (!Object.isExtensible(shape)) return fn();
+    Object.defineProperty(shape, '_memo', { value: new Map(), enumerable: false });
+  }
+  const m = shape._memo;
+  if (!m.has(key)) m.set(key, fn());
+  return m.get(key);
+}
+
 export function totalMatches(shape) {
+  return memo(shape, 'totalMatches', () => totalMatchesRaw(shape));
+}
+
+function totalMatchesRaw(shape) {
   // Duplicates are reported once per copy: scale distinct matches by k / kDistinct.
   let s = 0;
   for (const p of patternsOf(shape)) s += expectedMatches(shape, p);
@@ -105,6 +120,10 @@ export function naiveFeatures(shape) {
 }
 
 export function horspoolFeatures(shape) {
+  return { ...memo(shape, 'horspool', () => horspoolRaw(shape)) };
+}
+
+function horspoolRaw(shape) {
   const n = shape.n;
   let windows = 0, verify = 0;
   for (const p of patternsOf(shape)) {
@@ -166,13 +185,16 @@ export function kmpFeatures(shape) {
 
 export function rabinKarpFeatures(shape) {
   const n = shape.n;
-  return {
-    enc: n,
-    scan: n * Math.max(1, shape.distinctLengths ?? 1),
-    verify: totalMatches(shape) * shape.mAvg,
-    prep: shape.mSum,
-    out: totalMatches(shape),
-  };
+  // one rolling pass per distinct length; groups with >1 pattern also probe a hash table
+  const groups = new Map();
+  for (const p of patternsOf(shape)) groups.set(p.length, (groups.get(p.length) ?? 0) + 1);
+  let scan = 0, probe = 0;
+  for (const [m, count] of groups) {
+    if (m > n) continue;
+    scan += n - m + 1;
+    if (count > 1) probe += n - m + 1;
+  }
+  return { enc: n, scan, probe, prep: shape.mSum, out: totalMatches(shape) };
 }
 
 export function ahoCorasickFeatures(shape) {
