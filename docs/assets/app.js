@@ -175,6 +175,9 @@ function opts() {
 const nextFrame = () => new Promise((r) => setTimeout(r, 16));
 
 let lastRecord = null;
+function renderShape(s) {
+  $('#shape').innerHTML = [['n', s.n.toLocaleString('tr-TR')], ['σ', s.sigma], ['k', s.k], ['m', `${s.mMin}–${s.mMax}`], ['m̄', s.mAvg], ['Σf²', s.collision], ...(s.sampled ? [['örneklem', 'evet']] : [])].map(([k, v]) => `<span>${k}=${esc(v)}</span>`).join('');
+}
 function renderBars(record, measured = null) {
   const names = registry.names();
   const vals = names.map((n) => record.estimates[n]).concat(measured ? Object.values(measured) : []).filter((v) => v > 0);
@@ -206,8 +209,7 @@ $('#run').addEventListener('click', async () => {
     $('#selected').textContent = r.selected;
     $('#timing').textContent = `toplam ${fmt(ms)} · karar ${fmt(r.decisionMs)}`;
     $('#why').textContent = r.why;
-    const s = r.shape;
-    $('#shape').innerHTML = [['n', s.n.toLocaleString('tr-TR')], ['σ', s.sigma], ['k', s.k], ['m', `${s.mMin}–${s.mMax}`], ['m̄', s.mAvg], ['Σf²', s.collision], ...(s.sampled ? [['örneklem', 'evet']] : [])].map(([k, v]) => `<span>${k}=${esc(v)}</span>`).join('');
+    renderShape(r.shape);
     $('#record').textContent = JSON.stringify(r, null, 2);
     $('#benchNote').textContent = '(log ölçek; çubuk = tahmin)';
     renderBars(r);
@@ -240,7 +242,12 @@ $('#bench').addEventListener('click', async () => {
     }
     const fastest = Object.entries(measured).sort((a, b) => a[1] - b[1])[0];
     $('#selected').textContent = record.selected;
+    $('#timing').textContent = `karar ${fmt(record.decisionMs)}`;
     $('#why').textContent = record.why;
+    renderShape(record.shape);
+    $('#record').textContent = JSON.stringify(record, null, 2);
+    $('#matchCount').textContent = '(ölçüm modunda listelenmez; Çalıştır\'a basın)';
+    $('#matches').innerHTML = '';
     $('#benchNote').textContent = '(log ölçek; çubuk = tahmin, siyah çizgi = tarayıcınızda ölçülen ortanca)';
     renderBars(record, measured);
     const ratio = measured[record.selected] / fastest[1];
