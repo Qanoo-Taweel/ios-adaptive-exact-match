@@ -21,7 +21,7 @@ classDiagram
   class ListCommand { +execute(io) }
   class HelpCommand { +execute(io) }
   class CommandFactory {
-    -commands$ Map
+    -commands Map$
     +create(argv)$ Command
   }
   class FastaReader {

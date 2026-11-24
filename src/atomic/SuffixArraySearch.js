@@ -19,7 +19,7 @@ export class SuffixArraySearch extends ExactSearchAtom {
 
   static selection = {
     features: suffixArrayFeatures,
-    defaults: { prep: 3e-8, scan: 5e-9, out: 6e-8 },
+    defaults: { index: 3e-8, scan: 5e-9, out: 6e-8 },
     applicable() { return true; },
   };
 

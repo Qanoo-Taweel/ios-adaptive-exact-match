@@ -6,6 +6,10 @@
  * (seconds per operation) and adds them up:
  *     estimate(atom) = Σ_f  coef[atom][f] · feature[atom][f]
  *
+ * Feature names matter for streams: `prep` and `base` are paid ONCE per run
+ * (pattern preprocessing); every other feature is paid PER RECORD (see
+ * PER_RUN_FEATURES and CostModel.estimate).
+ *
  * The counts come from the text's character frequencies f(c) (measured on
  * the first record) and from the actual patterns, so the model "knows", for
  * example, that a Horspool shift is short when the pattern contains the
@@ -14,6 +18,9 @@
 import { bitsFor } from './alphabet.js';
 
 const log2 = Math.log2;
+
+/** Features paid once per run; all others are paid for every record. */
+export const PER_RUN_FEATURES = new Set(['prep', 'base']);
 
 /** Frequency of character code c in the text (0 if absent). */
 function fr(shape, c) { return shape.freq?.get(c) ?? 0; }
@@ -237,7 +244,7 @@ export function doublingRounds(shape) {
 export function suffixArrayFeatures(shape) {
   const n = shape.n;
   return {
-    prep: n * (1 + doublingRounds(shape)),
+    index: n * (1 + doublingRounds(shape)),           // per record: the text is indexed again
     scan: sumOver(shape, (p) => p.length * log2(Math.max(2, n))),
     out: totalMatches(shape),
   };
@@ -246,7 +253,7 @@ export function suffixArrayFeatures(shape) {
 export function fmIndexFeatures(shape) {
   const n = shape.n;
   return {
-    prep: n * (1 + doublingRounds(shape)),
+    index: n * (1 + doublingRounds(shape)),          // per record: SA of the text
     enc: n,                                          // BWT + Occ construction
     scan: sumOver(shape, (p) => p.length * 64),      // 2 rank queries per char, ~32 cells each
     out: totalMatches(shape),

@@ -46,8 +46,9 @@ export class CostEstimationHandler extends SelectionHandler {
   handle(ctx) {
     ctx.estimates = {};
     ctx.details = {};
+    const records = ctx.records ?? 1;
     for (const A of ctx.candidates) {
-      const e = ctx.costModel.estimate(A, ctx.shape);
+      const e = ctx.costModel.estimate(A, ctx.shape, { records });
       ctx.estimates[A.manifest.name] = e.seconds;
       ctx.details[A.manifest.name] = e;
     }
@@ -75,7 +76,8 @@ export class CheapestAtomHandler extends SelectionHandler {
     ctx.selected = best;
     const fmt = (s) => `${(s * 1e3).toPrecision(3)} ms`;
     const s = ctx.shape;
-    let why = `cheapest estimated cost: ${best} ≈ ${fmt(bestS)} for n=${s.n}, σ=${s.sigma}, k=${s.k}, m=${s.mMin}..${s.mMax}`;
+    const plan = (ctx.records ?? 1) > 1 ? ` (planned for ${ctx.records} records like the first)` : '';
+    let why = `cheapest estimated cost: ${best} ≈ ${fmt(bestS)}${plan} for n=${s.n}, σ=${s.sigma}, k=${s.k}, m=${s.mMin}..${s.mMax}`;
     if (ranking.length > 1) {
       const [second, secS] = ranking[1];
       why += `; next best ${second} ≈ ${fmt(secS)} (${(secS / Math.max(bestS, 1e-12)).toFixed(2)}× slower)`;

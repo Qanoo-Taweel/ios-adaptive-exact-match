@@ -18,7 +18,7 @@ export class FmIndexSearch extends ExactSearchAtom {
 
   static selection = {
     features: fmIndexFeatures,
-    defaults: { prep: 3e-8, enc: 1e-8, scan: 2e-9, out: 6e-8 },
+    defaults: { index: 3e-8, enc: 1e-8, scan: 2e-9, out: 6e-8 },
     applicable() { return true; },
   };
 

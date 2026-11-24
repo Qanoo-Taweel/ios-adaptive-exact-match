@@ -14,7 +14,7 @@ import { foldAscii } from './functions/alphabet.js';
  * folded patterns) are attached as NON-ENUMERABLE properties: atoms can read
  * them in `features(shape)`, but they stay out of `record.shape` and JSON.
  */
-const SAMPLE_LIMIT = 1 << 16, BLOCKS = 64, BLOCK = 1024;
+const SAMPLE_LIMIT = 1 << 13, BLOCKS = 32, BLOCK = 256;
 const SEEN = new Uint32Array(65536); // shared scratch table, always left all-zero
 
 export class ShapeBuilder {
@@ -40,11 +40,11 @@ export class ShapeBuilder {
     const n = text.length;
 
     // Text alphabet and character frequencies of the first record.
-    // Texts up to 2^16 characters are scanned completely; longer texts are
-    // sampled in 64 evenly spaced blocks of 1024 characters (65 536 chars), so
-    // the decision costs ~0.1 ms instead of growing with n. σ is then an
-    // estimate (a character rarer than ~1/65 536 can be missed); `sampled`
-    // says so in the record.
+    // Texts up to 2^13 characters are scanned completely; longer texts are
+    // sampled in 32 evenly spaced blocks of 256 characters (8 192 chars), so
+    // the decision costs a few tens of µs instead of growing with n. σ is
+    // then an estimate (a character rarer than ~1/8 192 can be missed);
+    // `sampled: true` says so in the record.
     const chars = [];
     let counted = 0;
     const count = (from, to) => {

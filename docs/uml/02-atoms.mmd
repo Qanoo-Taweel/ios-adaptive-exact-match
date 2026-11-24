@@ -5,8 +5,8 @@ classDiagram
   direction TB
   class ExactSearchAtom {
     <<abstract>>
-    +manifest$ Manifest
-    +selection$ Selection
+    +manifest Manifest$
+    +selection Selection$
     +params Params
     #original string[]
     #unique string[]
@@ -24,17 +24,50 @@ classDiagram
     +ordered() Iterable~pair~
   }
   class NaiveSearch { +findAll(text, hits) }
-  class BoyerMooreSearch { #prepare(patterns) +findAll(text, hits) }
-  class HorspoolSearch { #prepare(patterns) +findAll(text, hits) }
-  class Bm4DnaDsSearch { #prepare(patterns) +findAll(text, hits) }
-  class Bm4DnaHmbsSearch { #prepare(patterns) +findAll(text, hits) }
-  class ShiftOrSearch { #prepare(patterns) +findAll(text, hits) }
-  class KmpSearch { #prepare(patterns) +findAll(text, hits) }
-  class RabinKarpSearch { #prepare(patterns) +findAll(text, hits) }
-  class AhoCorasickSearch { #prepare(patterns) +findAll(text, hits) }
-  class WuManberSearch { #prepare(patterns) +findAll(text, hits) }
-  class SuffixArraySearch { #prepare(patterns) +findAll(text, hits) }
-  class FmIndexSearch { #prepare(patterns) +findAll(text, hits) }
+  class BoyerMooreSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class HorspoolSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class Bm4DnaDsSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class Bm4DnaHmbsSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class ShiftOrSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class KmpSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class RabinKarpSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class AhoCorasickSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class WuManberSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class SuffixArraySearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class FmIndexSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
   ExactSearchAtom ..> HitCollector : creates per entry
   ExactSearchAtom <|-- NaiveSearch
   ExactSearchAtom <|-- BoyerMooreSearch
@@ -48,4 +81,4 @@ classDiagram
   ExactSearchAtom <|-- WuManberSearch
   ExactSearchAtom <|-- SuffixArraySearch
   ExactSearchAtom <|-- FmIndexSearch
-  note for ExactSearchAtom "Template Method: process() is fixed;\nsubclasses fill prepare() + findAll().\nStrategy: all 12 subclasses are interchangeable (LSP)."
+  note for ExactSearchAtom "Template Method: process() is fixed;<br>subclasses fill prepare() + findAll().<br>Strategy: all 12 subclasses are interchangeable (LSP)."

@@ -32,7 +32,8 @@ export class ExactMatch {
   };
 
   /**
-   * @param {{patterns:string[], ignoreCase?:boolean, strategy?:string}} params
+   * @param {{patterns:string[], ignoreCase?:boolean, strategy?:string, expectedRecords?:number}} params
+   *   expectedRecords (optional): override the stream prior used by the cost model
    * @param {{registry?:object, costModel?:CostModel, factory?:AtomFactory}} deps
    */
   constructor(params, deps = {}) {
@@ -44,7 +45,11 @@ export class ExactMatch {
     this.factory = deps.factory ?? new AtomFactory(this.registry);
     this.chain = deps.chain ?? buildSelectionChain();
     if (strategy !== 'auto') this.registry.get(strategy); // fail fast with the list of options
-    this.params = { patterns: [...patterns], ignoreCase, strategy };
+    const expectedRecords = params.expectedRecords;
+    if (expectedRecords !== undefined && !(Number.isInteger(expectedRecords) && expectedRecords >= 1)) {
+      throw new TypeError('expectedRecords must be a positive integer');
+    }
+    this.params = { patterns: [...patterns], ignoreCase, strategy, expectedRecords };
     this.atom = null;
     this.record = { requested: strategy, selected: null, shape: null, estimates: null, why: 'no record seen yet' };
   }
@@ -59,10 +64,12 @@ export class ExactMatch {
     if (this.atom) return this.record;
     const t0 = now();
     const shape = shapeOf(firstEntry, this.params);
+    const records = this.params.expectedRecords ?? CostModel.expectedRecords(shape);
     const ctx = this.chain.handle({
       requested: this.params.strategy,
       forced: false,
       shape,
+      records,
       registry: this.registry,
       costModel: this.costModel,
     });
@@ -79,6 +86,7 @@ export class ExactMatch {
       shape,
       estimates,                 // milliseconds, null = not applicable
       unit: 'ms',
+      plannedRecords: records,   // stream prior used for the estimates (see CostModel.expectedRecords)
       ranking: ctx.ranking,
       excluded: ctx.excluded,
       why: ctx.why,

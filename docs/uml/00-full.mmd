@@ -5,8 +5,8 @@ classDiagram
   direction TB
   class ExactSearchAtom {
     <<abstract>>
-    +manifest$ Manifest
-    +selection$ Selection
+    +manifest Manifest$
+    +selection Selection$
     +params Params
     #original string[]
     #unique string[]
@@ -24,17 +24,50 @@ classDiagram
     +ordered() Iterable~pair~
   }
   class NaiveSearch { +findAll(text, hits) }
-  class BoyerMooreSearch { #prepare(patterns) +findAll(text, hits) }
-  class HorspoolSearch { #prepare(patterns) +findAll(text, hits) }
-  class Bm4DnaDsSearch { #prepare(patterns) +findAll(text, hits) }
-  class Bm4DnaHmbsSearch { #prepare(patterns) +findAll(text, hits) }
-  class ShiftOrSearch { #prepare(patterns) +findAll(text, hits) }
-  class KmpSearch { #prepare(patterns) +findAll(text, hits) }
-  class RabinKarpSearch { #prepare(patterns) +findAll(text, hits) }
-  class AhoCorasickSearch { #prepare(patterns) +findAll(text, hits) }
-  class WuManberSearch { #prepare(patterns) +findAll(text, hits) }
-  class SuffixArraySearch { #prepare(patterns) +findAll(text, hits) }
-  class FmIndexSearch { #prepare(patterns) +findAll(text, hits) }
+  class BoyerMooreSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class HorspoolSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class Bm4DnaDsSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class Bm4DnaHmbsSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class ShiftOrSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class KmpSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class RabinKarpSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class AhoCorasickSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class WuManberSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class SuffixArraySearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
+  class FmIndexSearch {
+    #prepare(patterns)
+    +findAll(text, hits)
+  }
   ExactSearchAtom ..> HitCollector : creates per entry
   ExactSearchAtom <|-- NaiveSearch
   ExactSearchAtom <|-- BoyerMooreSearch
@@ -48,9 +81,9 @@ classDiagram
   ExactSearchAtom <|-- WuManberSearch
   ExactSearchAtom <|-- SuffixArraySearch
   ExactSearchAtom <|-- FmIndexSearch
-  note for ExactSearchAtom "Template Method: process() is fixed;\nsubclasses fill prepare() + findAll().\nStrategy: all 12 subclasses are interchangeable (LSP)."
+  note for ExactSearchAtom "Template Method: process() is fixed;<br>subclasses fill prepare() + findAll().<br>Strategy: all 12 subclasses are interchangeable (LSP)."
   class ExactMatch {
-    +manifest$ Manifest
+    +manifest Manifest$
     +params Params
     +record Record
     -atom ExactSearchAtom
@@ -108,8 +141,8 @@ classDiagram
   AtomFactory --> AtomRegistry
   AtomRegistry o--> "1..*" ExactSearchAtom : registered classes
   CostEstimationHandler ..> CostModel
-  note for ExactMatch "Open/Closed: never names a concrete atom.\nDependency Inversion: registry, cost model,\nfactory and chain are injected."
-  note for SelectionHandler "Chain of Responsibility:\nForced → Applicability → CostEstimation → Cheapest"
+  note for ExactMatch "Open/Closed: never names a concrete atom.<br>Dependency Inversion: registry, cost model,<br>factory and chain are injected."
+  note for SelectionHandler "Chain of Responsibility:<br>Forced → Applicability → CostEstimation → Cheapest"
   class IoSFacade {
     +registry AtomRegistry
     +listComponents() Manifest[]
@@ -128,7 +161,7 @@ classDiagram
   class ListCommand { +execute(io) }
   class HelpCommand { +execute(io) }
   class CommandFactory {
-    -commands$ Map
+    -commands Map$
     +create(argv)$ Command
   }
   class FastaReader {

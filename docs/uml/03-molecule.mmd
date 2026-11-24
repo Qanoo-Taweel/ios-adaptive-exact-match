@@ -4,7 +4,7 @@ title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry
 classDiagram
   direction LR
   class ExactMatch {
-    +manifest$ Manifest
+    +manifest Manifest$
     +params Params
     +record Record
     -atom ExactSearchAtom
@@ -63,5 +63,5 @@ classDiagram
   AtomFactory --> AtomRegistry
   AtomRegistry o--> "1..*" ExactSearchAtom : registered classes
   CostEstimationHandler ..> CostModel
-  note for ExactMatch "Open/Closed: never names a concrete atom.\nDependency Inversion: registry, cost model,\nfactory and chain are injected."
-  note for SelectionHandler "Chain of Responsibility:\nForced → Applicability → CostEstimation → Cheapest"
+  note for ExactMatch "Open/Closed: never names a concrete atom.<br>Dependency Inversion: registry, cost model,<br>factory and chain are injected."
+  note for SelectionHandler "Chain of Responsibility:<br>Forced → Applicability → CostEstimation → Cheapest"

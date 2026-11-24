@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExactMatch · IoS tam desen eşleştirme</title>
+<meta name="description" content="12 tam eşleştirme atomu ve girdiye göre en hızlısını seçen kalibre edilmiş ExactMatch molekülü. Tarayıcıda canlı demo, doğrulama sonuçları, UML.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c5cab'/%3E%3Cpath d='M8 11h16M8 16h10M8 21h13' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#"><span class="logo" aria-hidden="true"></span>ExactMatch</a>
+    <nav aria-label="Bölümler">
+      <a href="#demo">Demo</a><a href="#atomlar">Atomlar</a><a href="#secim">Seçim</a><a href="#sonuclar">Sonuçlar</a><a href="#uml">UML</a><a href="#desenler">Desenler</a><a href="#rapor">Rapor</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Tema değiştir" title="Tema değiştir">◐</button>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap">
+  <p class="eyebrow">IoS bileşeni · <code>sequence.pattern-match.exact</code></p>
+  <h1>Girdinin şekline bakıp <em>en hızlı</em> tam eşleştirme algoritmasını kendisi seçen molekül</h1>
+  <p class="lead">On iki atom (Horspool'dan FM-index'e), karakter frekanslarını hesaba katan bir maliyet modeli ve görülmemiş verilerde dürüst bir karşılaştırma. Saf JavaScript, sıfır bağımlılık. Aşağıdaki demo, depodaki kodun aynısını tarayıcınızda çalıştırır.</p>
+  <div class="kpis" id="kpis" aria-live="polite">
+    <div class="kpi"><div class="kpi-v">12</div><div class="kpi-l">atom (10 yeni, 2 bonus)</div></div>
+    <div class="kpi"><div class="kpi-v">518</div><div class="kpi-l">test, oracle ile birebir</div></div>
+    <div class="kpi"><div class="kpi-v" data-k="em">…</div><div class="kpi-l">ExactMatch geo. ort. yavaşlama</div></div>
+    <div class="kpi"><div class="kpi-v" data-k="allmer">…</div><div class="kpi-l">Allmer 2016 kuralı</div></div>
+    <div class="kpi"><div class="kpi-v" data-k="best">…</div><div class="kpi-l" data-k="bestname">en iyi sabit atom</div></div>
+  </div>
+  <div class="cta">
+    <a class="btn primary" href="#demo">Canlı demoyu aç</a>
+    <a class="btn" href="report/Rapor.pdf">Rapor (PDF)</a>
+    <a class="btn" href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match">Kaynak kod</a>
+  </div>
+</section>
+
+<!-- ============================== DEMO ============================== -->
+<section id="demo" class="band">
+  <div class="wrap">
+    <h2>Canlı demo: <code>explain</code> + <code>run</code></h2>
+    <p class="sub">Bir veri kümesi seçin veya FASTA yapıştırın, desenleri girin. Molekül ilk kayda bakar, her atomun maliyetini tahmin eder ve en ucuzunu çalıştırır. "Bütün atomları ölç" düğmesi tahminleri sizin makinenizdeki gerçek sürelerle karşılaştırır.</p>
+    <div class="demo">
+      <div class="panel controls">
+        <label class="field"><span>Veri</span>
+          <select id="dataset">
+            <option value="lambda">Lambda faj genomu (48 502 bp)</option>
+            <option value="ecoli">126 E. coli proteini (akış)</option>
+            <option value="random-dna">Rastgele DNA, 1 000 000 karakter</option>
+            <option value="random-text">Rastgele İngilizce metin, 200 000 karakter</option>
+            <option value="custom">Kendi FASTA'm</option>
+          </select>
+        </label>
+        <label class="field" id="customWrap" hidden><span>FASTA</span>
+          <textarea id="fasta" rows="6" spellcheck="false">&gt;demo örnek
+ACGTACGTGGCCAAACGTTTACGT</textarea>
+        </label>
+        <label class="field"><span>Desenler (virgülle)</span>
+          <input id="patterns" value="GAATTC,GGATCC,AAGCTT" spellcheck="false" autocomplete="off">
+        </label>
+        <div class="presets" aria-label="Hazır desen setleri">
+          <button type="button" data-p="GAATTC,GGATCC,AAGCTT">3 restriksiyon bölgesi</button>
+          <button type="button" data-p="GGGCGGCGACCTCGCGGGTTTTCGCTATTTATGAAAATTTTCCGGTTTAAGGCGTTTCCGTTCTTCTTCG">1 uzun desen (70)</button>
+          <button type="button" data-p="many">120 kısa desen</button>
+          <button type="button" data-p="MKK,LLLL,W,GG">peptitler</button>
+        </div>
+        <div class="row">
+          <label class="check"><input type="checkbox" id="ignoreCase"> ignoreCase</label>
+          <label class="field inline"><span>Strateji</span><select id="strategy"><option value="auto">auto</option></select></label>
+        </div>
+        <div class="row">
+          <button class="btn primary" id="run" type="button">Çalıştır</button>
+          <button class="btn" id="bench" type="button">Bütün atomları ölç</button>
+        </div>
+        <p class="hint" id="status" role="status">Hazır.</p>
+      </div>
+      <div class="panel result">
+        <div class="decision" id="decision">
+          <div class="dec-head"><span class="pill">seçilen</span><strong id="selected">—</strong><span class="muted" id="timing"></span></div>
+          <p class="why" id="why">Çalıştır'a basın.</p>
+          <div class="shape" id="shape"></div>
+        </div>
+        <h3 class="mini">Tahmin edilen maliyet <span class="muted" id="benchNote"></span></h3>
+        <div class="bars" id="bars" role="list"></div>
+        <details class="json"><summary><code>em.record</code> (JSON)</summary><pre id="record"></pre></details>
+        <h3 class="mini">Eşleşmeler <span class="muted" id="matchCount"></span></h3>
+        <div class="tablewrap"><table class="matches"><thead><tr><th>header</th><th>pattern</th><th>position</th><th>length</th></tr></thead><tbody id="matches"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ATOMS ============================== -->
+<section id="atomlar" class="wrap">
+  <h2>Atomlar</h2>
+  <p class="sub">Hepsi <code>ExactSearchAtom</code>'dan türer (Template Method) ve sözleşme testlerinin aynısını geçer. Rozet, ödev tablosundaki grubu; sayı, 240 vakalık kalibrasyon ızgarasında kaç vakada en hızlı olduğunu gösterir.</p>
+  <div class="cards" id="atomCards"></div>
+</section>
+
+<!-- ============================== SELECTION ============================== -->
+<section id="secim" class="band">
+  <div class="wrap">
+    <h2>Seçim nasıl yapılıyor?</h2>
+    <div class="chain" aria-label="Seçim zinciri">
+      <div class="step"><span class="n">0</span><h4>ShapeBuilder</h4><p>İlk kayıttan n, σ, k, m<sub>min/maks/ort</sub>, karakter frekansları, Σf².</p></div>
+      <div class="step"><span class="n">1</span><h4>ForcedStrategy</h4><p><code>strategy</code> bir atom adıysa onu doğrular (bilinmeyen ad → seçenekleri listeleyen hata).</p></div>
+      <div class="step"><span class="n">2</span><h4>Applicability</h4><p><code>applicable(shape)</code> ≠ true olan atomu nedeniyle birlikte dışarıda bırakır.</p></div>
+      <div class="step"><span class="n">3</span><h4>CostEstimation</h4><p>tahmin = taban + Σ c<sub>f</sub> · özellik<sub>f</sub>; özellikler beklenen işlem sayılarıdır.</p></div>
+      <div class="step"><span class="n">4</span><h4>CheapestAtom</h4><p>En ucuzu seçer, <code>why</code> metnini ve sıralamayı yazar.</p></div>
+    </div>
+    <div class="explain-grid">
+      <div class="panel"><h3>Özellik örneği: Horspool</h3><p>Beklenen kayma, metnin karakter frekansları f(c) ve desenin gerçek kayma tablosundan kapalı biçimde: <code>E[s] = Σ f(c)·kayma(c)</code>. Pencere sayısı <code>n / E[s]</code>, doğrulama <code>pencere × f(son) × beklenen sonek</code>. DNA'da (σ=4) kayma kısa kalır; protein veya metinde uzar. Model bunu ölçmeden "bilir".</p></div>
+      <div class="panel"><h3>Katsayılar nereden?</h3><p><code>npm run calibrate</code> 240 vakada her atomu ölçer (ısınma + 3 tekrarın ortancası), ardından her atom için <b>bağıl hatayı</b> en aza indiren negatif olmayan en küçük kareleri çözer. Sonuç <code>src/selection/coefficients.js</code>'e yazılır. Kalibre edilmemiş yeni bir atom kendi <code>defaults</code> katsayılarıyla çalışır.</p></div>
+      <div class="panel"><h3>Neden kural değil?</h3><p>"m &lt; 50 ise DS" gibi bir kural her yeni atomda yeniden yazılmalıdır. Maliyet modelinde yeni atom kendi özelliklerini getirir; molekül kodu değişmez. Bunu bir test, yalnızca test dosyasında var olan sahte bir atomu seçtirerek kanıtlar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESULTS ============================== -->
+<section id="sonuclar" class="wrap">
+  <h2>Sonuçlar</h2>
+  <p class="sub" id="machine">Ölçüm makinesi yükleniyor…</p>
+  <div class="tabs" role="tablist" id="setTabs">
+    <button role="tab" data-set="ALL" aria-selected="true">Hepsi</button>
+    <button role="tab" data-set="V" aria-selected="false">V: çok desen</button>
+    <button role="tab" data-set="S" aria-selected="false">S: tek desen</button>
+    <button role="tab" data-set="R" aria-selected="false">R: gerçek veri</button>
+  </div>
+  <div class="tablewrap"><table class="policy"><thead><tr><th>Politika</th><th>En hızlıyı seçme</th><th>%10 içinde</th><th>Geo. ort. yavaşlama</th><th>En kötü</th><th>Toplam / en iyi</th></tr></thead><tbody id="policyRows"></tbody></table></div>
+  <p class="hint" id="setNote"></p>
+
+  <h3>Kalibrasyon ızgarası gezgini</h3>
+  <p class="sub">Her hücre bir vaka: renk ve kod en hızlı atomu gösterir. Üzerine gelince bütün atomların süresi görünür.</p>
+  <div class="row">
+    <label class="field inline"><span>Alfabe</span><select id="gridAlpha"></select></label>
+    <label class="field inline"><span>n</span><select id="gridN"></select></label>
+  </div>
+  <div class="gridwrap"><div id="grid" class="heat"></div><div id="gridTip" class="tip" role="tooltip" hidden></div></div>
+  <div class="legend" id="legend"></div>
+
+  <div class="figs">
+    <figure><img src="figures/fig1-winners.svg" alt="Kalibrasyon ızgarasında en hızlı atom haritası" loading="lazy"><figcaption>Şekil 1. Bütün ızgara; halka = modelin farklı seçtiği hücre.</figcaption></figure>
+    <figure><img src="figures/fig2-policies.svg" alt="Politikaların geometrik ortalama yavaşlaması" loading="lazy"><figcaption>Şekil 2. Politikalar (log ölçek).</figcaption></figure>
+    <figure><img src="figures/fig3-cdf.svg" alt="Yavaşlama dağılımı" loading="lazy"><figcaption>Şekil 3. Yavaşlama dağılımı.</figcaption></figure>
+    <figure><img src="figures/fig4-accuracy.svg" alt="Tahmin ve ölçüm karşılaştırması" loading="lazy"><figcaption>Şekil 4. Tahmin ve ölçüm.</figcaption></figure>
+  </div>
+
+  <h3>En kötü 8 seçim</h3>
+  <div class="tablewrap"><table><thead><tr><th>Vaka</th><th>Alfabe</th><th>n</th><th>Kayıt</th><th>k</th><th>m</th><th>En hızlı</th><th>Seçilen</th><th>Yavaşlama</th></tr></thead><tbody id="worstRows"></tbody></table></div>
+  <p class="hint">Analiz raporun 6. ve 7. bölümünde. Ham ölçümler: <a href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match/tree/main/bench/results">bench/results/</a>.</p>
+</section>
+
+<!-- ============================== UML ============================== -->
+<section id="uml" class="band">
+  <div class="wrap">
+    <h2>UML</h2>
+    <p class="sub">Kaynaklar Mermaid (<code>.mmd</code>, GitHub doğrudan çizer) ve PlantUML (<code>.puml</code>) olarak depoda. Elle çizilecekse 9 kutuluk sürüm yeterli.</p>
+    <div class="uml-grid">
+      <a class="uml" href="uml/00-full.svg"><img src="uml/00-full.png" alt="Tam sınıf diyagramı" loading="lazy"><span>Tam sınıf diyagramı</span></a>
+      <a class="uml" href="uml/03-molecule.svg"><img src="uml/03-molecule.png" alt="Molekül ve seçim" loading="lazy"><span>Molekül ve seçim zinciri</span></a>
+      <a class="uml" href="uml/02-atoms.svg"><img src="uml/02-atoms.png" alt="Atom hiyerarşisi" loading="lazy"><span>Atom hiyerarşisi</span></a>
+      <a class="uml" href="uml/04-cli.svg"><img src="uml/04-cli.png" alt="CLI, Facade, Command" loading="lazy"><span>CLI: Facade + Command</span></a>
+      <a class="uml" href="uml/05-sequence-explain.svg"><img src="uml/05-sequence-explain.png" alt="explain sıra diyagramı" loading="lazy"><span>Sıra diyagramı: explain</span></a>
+      <a class="uml" href="uml/06-hand-drawable.svg"><img src="uml/06-hand-drawable.png" alt="Elle çizilebilir sürüm" loading="lazy"><span>Elle çizilebilir (9 kutu)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PATTERNS ============================== -->
+<section id="desenler" class="wrap">
+  <h2>Tasarım desenleri ve SOLID</h2>
+  <div class="tablewrap"><table class="patterns">
+    <thead><tr><th>Desen</th><th>Nerede</th><th>Neden</th></tr></thead>
+    <tbody>
+      <tr><td>Template Method</td><td><code>ExactSearchAtom.process()</code></td><td>Sözleşme adımları (doğrulama, ignoreCase, sıralama, tekrarlar) tek yerde; atom yalnızca <code>prepare()</code> ve <code>findAll()</code> yazar.</td></tr>
+      <tr><td>Strategy</td><td>12 atom sınıfı</td><td>Aynı görev, aynı arayüz; molekül çalışma anında birini seçer.</td></tr>
+      <tr><td>Registry</td><td><code>AtomRegistry</code></td><td>Yeni atom = <code>register()</code>; molekül kodu değişmez.</td></tr>
+      <tr><td>Factory Method</td><td><code>ExactMatch.createAtom()</code>, <code>AtomFactory</code>, <code>CommandFactory</code></td><td>Nesneler adla üretilir; hiçbir üst katman somut sınıfa <code>new</code> demez.</td></tr>
+      <tr><td>Chain of Responsibility</td><td><code>SelectionChain.js</code></td><td>Seçim adımları bağımsız; yeni kural yeni bir işleyicidir.</td></tr>
+      <tr><td>Facade</td><td><code>IoSFacade</code></td><td>CLI ve bu sayfadaki demo için tek giriş noktası.</td></tr>
+      <tr><td>Command</td><td><code>RunCommand</code>, <code>ExplainCommand</code>, <code>ListCommand</code></td><td>Her CLI fiili, terminalsiz test edilebilen bir nesne.</td></tr>
+      <tr><td>Builder</td><td><code>ShapeBuilder</code></td><td>Veri şekli molekülde, ölçümde ve testlerde aynı yoldan kurulur.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="solid">
+    <div><b>S</b><span>Çekirdekler saf fonksiyon, atom yalnızca uyarlar; her işleyici tek adım.</span></div>
+    <div><b>O</b><span>Sahte atom testi: molekül değişmeden seçilir.</span></div>
+    <div><b>L</b><span>12 atom aynı sözleşme testlerini geçer, birbirinin yerine geçer.</span></div>
+    <div><b>I</b><span>Atom yalnızca manifest, selection ve process sunar.</span></div>
+    <div><b>D</b><span>Registry, maliyet modeli, fabrika ve zincir enjekte edilir.</span></div>
+  </div>
+</section>
+
+<!-- ============================== REPORT ============================== -->
+<section id="rapor" class="band">
+  <div class="wrap">
+    <h2>Rapor ve kaynaklar</h2>
+    <div class="links">
+      <a class="linkcard" href="report/Rapor.pdf"><b>Rapor (PDF)</b><span>IoS bileşen yayını biçiminde, 8 bölüm + ekler</span></a>
+      <a class="linkcard" href="report/rapor.html"><b>Rapor (HTML)</b><span>Aynı içerik, tarayıcıda</span></a>
+      <a class="linkcard" href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match"><b>GitHub deposu</b><span>Kod, testler, ölçümler, commit geçmişi</span></a>
+      <a class="linkcard" href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match/blob/main/bench/results/validation.md"><b>Doğrulama tabloları</b><span>bench/results/validation.md</span></a>
+      <a class="linkcard" href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match/blob/main/docs/design-patterns.md"><b>Desen notları</b><span>"Neden bunu kullandın?" soruları için</span></a>
+      <a class="linkcard" href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match/tree/main/docs/uml"><b>UML kaynakları</b><span>.mmd, .puml, .svg, .png</span></a>
+    </div>
+    <pre class="cli">npm test                                   # 518 test, bağımlılık yok
+npm run calibrate                          # 240 vakalık ızgara → coefficients.js
+npm run bench                              # 184 vakalık doğrulama
+node bin/ios.js explain --patterns GAATTC,GGATCC &lt; tests/data/lambda.fasta
+node bin/ios.js run ExactMatch --patterns ACGT,GGCC --ignoreCase &lt; girdi.fasta &gt; cikti.jsonl</pre>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <p><b>Qanoo Taweel</b> · YZM327 Vize projesi (Ödev 3) · Kasım 2026. Veri: NCBI RefSeq NC_001416.1, UniProtKB/Swiss-Prot E. coli K-12. Kodlama ve belgelemede Claude Code asistan olarak kullanılmıştır.</p>
+</footer>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>

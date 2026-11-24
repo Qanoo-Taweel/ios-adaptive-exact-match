@@ -10,9 +10,9 @@ describe('calibration results', () => {
   const cal = load('calibration.json');
   it('covers ≥ 3 alphabets × 3 n (10^4..10^6) × 5 m × 4 k', () => {
     assert.ok(cal.grid.alphabets.length >= 3);
-    assert.deepEqual(cal.grid.n, [1e4, 1e5, 1e6]);
+    for (const n of [1e4, 1e5, 1e6]) assert.ok(cal.grid.n.includes(n), `n=${n} missing`);
     assert.ok(cal.grid.m.length >= 5 && cal.grid.k.length >= 4);
-    assert.equal(cal.cases.length, cal.grid.alphabets.length * 3 * cal.grid.m.length * cal.grid.k.length);
+    assert.equal(cal.cases.length, cal.grid.alphabets.length * cal.grid.n.length * cal.grid.m.length * cal.grid.k.length);
   });
   it('measures every atom on every case and records the machine', () => {
     for (const c of cal.cases) assert.ok(Object.keys(c.times).length >= 11);

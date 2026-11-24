@@ -1,0 +1,481 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 862 804" width="862" height="804" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Fastest atom per calibration case"><title>Fastest atom per calibration case</title><rect width="862" height="804" fill="#fcfcfb"/><text x="92" y="22" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="600">Fastest atom on the calibration grid (rows: pattern length m, columns: pattern count k)</text><text x="92" y="40" font-size="11" fill="#52514e" text-anchor="start">A ring marks cells where the fitted cost model picks a different atom (in-sample).</text><text x="164" y="68" font-size="11" fill="#0b0b0b" text-anchor="middle" font-weight="600">n = 1e3</text><text x="14" y="170" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="600">dna</text><text x="86" y="101" font-size="10" fill="#52514e" text-anchor="end">m=4</text><text x="109" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>dna, n=1000, m=4, k=1
+fastest: WuManberSearch 0.055 ms
+model picks: RabinKarpSearch (1.91×)</title><rect x="92" y="80" width="34" height="34" rx="4" fill="#2a78d6"/><text x="109" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="94.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="145" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>dna, n=1000, m=4, k=4
+fastest: WuManberSearch 0.035 ms
+model picks: ShiftOrSearch (1.77×)</title><rect x="128" y="80" width="34" height="34" rx="4" fill="#2a78d6"/><text x="145" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="130.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="181" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>dna, n=1000, m=4, k=16
+fastest: HorspoolSearch 0.092 ms
+model picks: AhoCorasickSearch (1.18×)</title><rect x="164" y="80" width="34" height="34" rx="4" fill="#eda100"/><text x="181" y="101" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="166.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="217" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>dna, n=1000, m=4, k=64
+fastest: RabinKarpSearch 0.075 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="80" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="137" font-size="10" fill="#52514e" text-anchor="end">m=12</text><g><title>dna, n=1000, m=12, k=1
+fastest: Bm4DnaDsSearch 0.020 ms
+model picks: RabinKarpSearch (3.87×)</title><rect x="92" y="116" width="34" height="34" rx="4" fill="#1baf7a"/><text x="109" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="94.5" y="118.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=12, k=4
+fastest: RabinKarpSearch 0.019 ms
+model picks: ShiftOrSearch (1.21×)</title><rect x="128" y="116" width="34" height="34" rx="4" fill="#6250d6"/><text x="145" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="130.5" y="118.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=12, k=16
+fastest: RabinKarpSearch 0.028 ms
+model picks: AhoCorasickSearch (1.76×)</title><rect x="164" y="116" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="166.5" y="118.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=12, k=64
+fastest: RabinKarpSearch 0.056 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="116" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="173" font-size="10" fill="#52514e" text-anchor="end">m=24</text><g><title>dna, n=1000, m=24, k=1
+fastest: WuManberSearch 0.013 ms
+model picks: RabinKarpSearch (1.96×)</title><rect x="92" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="109" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="94.5" y="154.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=24, k=4
+fastest: HorspoolSearch 0.017 ms
+model picks: AhoCorasickSearch (1.67×)</title><rect x="128" y="152" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="173" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="130.5" y="154.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=24, k=16
+fastest: RabinKarpSearch 0.029 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="164" y="152" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><g><title>dna, n=1000, m=24, k=64
+fastest: RabinKarpSearch 0.082 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="152" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="209" font-size="10" fill="#52514e" text-anchor="end">m=48</text><g><title>dna, n=1000, m=48, k=1
+fastest: RabinKarpSearch 0.022 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="92" y="188" width="34" height="34" rx="4" fill="#6250d6"/><text x="109" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><g><title>dna, n=1000, m=48, k=4
+fastest: RabinKarpSearch 0.022 ms
+model picks: HorspoolSearch (1.38×)</title><rect x="128" y="188" width="34" height="34" rx="4" fill="#6250d6"/><text x="145" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="130.5" y="190.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=48, k=16
+fastest: Bm4DnaDsSearch 0.040 ms
+model picks: RabinKarpSearch (1.17×)</title><rect x="164" y="188" width="34" height="34" rx="4" fill="#1baf7a"/><text x="181" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="166.5" y="190.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=48, k=64
+fastest: RabinKarpSearch 0.079 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="188" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="245" font-size="10" fill="#52514e" text-anchor="end">m=96</text><g><title>dna, n=1000, m=96, k=1
+fastest: BoyerMooreSearch 0.014 ms
+model picks: RabinKarpSearch (1.31×)</title><rect x="92" y="224" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="109" y="245" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="94.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=96, k=4
+fastest: RabinKarpSearch 0.023 ms
+model picks: HorspoolSearch (1.08×)</title><rect x="128" y="224" width="34" height="34" rx="4" fill="#6250d6"/><text x="145" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="130.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000, m=96, k=16
+fastest: RabinKarpSearch 0.039 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="164" y="224" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><g><title>dna, n=1000, m=96, k=64
+fastest: RabinKarpSearch 0.119 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="224" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="354" y="68" font-size="11" fill="#0b0b0b" text-anchor="middle" font-weight="600">n = 1e4</text><text x="299" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>dna, n=10000, m=4, k=1
+fastest: ShiftOrSearch 0.061 ms
+model picks: WuManberSearch (1.17×)</title><rect x="282" y="80" width="34" height="34" rx="4" fill="#008300"/><text x="299" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text><rect x="284.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="335" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>dna, n=10000, m=4, k=4
+fastest: Bm4DnaDsSearch 0.248 ms
+model picks: ShiftOrSearch (1.90×)</title><rect x="318" y="80" width="34" height="34" rx="4" fill="#1baf7a"/><text x="335" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="320.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="371" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>dna, n=10000, m=4, k=16
+fastest: AhoCorasickSearch 0.208 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="354" y="80" width="34" height="34" rx="4" fill="#eb6834"/><text x="371" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><text x="407" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>dna, n=10000, m=4, k=64
+fastest: WuManberSearch 0.436 ms
+model picks: AhoCorasickSearch (1.43×)</title><rect x="390" y="80" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="392.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=12, k=1
+fastest: BoyerMooreSearch 0.042 ms
+model picks: WuManberSearch (1.02×)</title><rect x="282" y="116" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="299" y="137" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="284.5" y="118.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=12, k=4
+fastest: WuManberSearch 0.070 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=10000, m=12, k=16
+fastest: AhoCorasickSearch 0.149 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="354" y="116" width="34" height="34" rx="4" fill="#eb6834"/><text x="371" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>dna, n=10000, m=12, k=64
+fastest: WuManberSearch 0.192 ms
+model picks: AhoCorasickSearch (1.03×)</title><rect x="390" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="392.5" y="118.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=24, k=1
+fastest: WuManberSearch 0.040 ms
+model picks: WuManberSearch (1.00×)</title><rect x="282" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="299" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=10000, m=24, k=4
+fastest: WuManberSearch 0.050 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=10000, m=24, k=16
+fastest: AhoCorasickSearch 0.101 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="354" y="152" width="34" height="34" rx="4" fill="#eb6834"/><text x="371" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>dna, n=10000, m=24, k=64
+fastest: AhoCorasickSearch 0.168 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="390" y="152" width="34" height="34" rx="4" fill="#eb6834"/><text x="407" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>dna, n=10000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.038 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="282" y="188" width="34" height="34" rx="4" fill="#e87ba4"/><text x="299" y="209" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>dna, n=10000, m=48, k=4
+fastest: Bm4DnaHmbsSearch 0.057 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="318" y="188" width="34" height="34" rx="4" fill="#e87ba4"/><text x="335" y="209" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>dna, n=10000, m=48, k=16
+fastest: AhoCorasickSearch 0.145 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="354" y="188" width="34" height="34" rx="4" fill="#eb6834"/><text x="371" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>dna, n=10000, m=48, k=64
+fastest: AhoCorasickSearch 0.234 ms
+model picks: WuManberSearch (1.33×)</title><rect x="390" y="188" width="34" height="34" rx="4" fill="#eb6834"/><text x="407" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text><rect x="392.5" y="190.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=96, k=1
+fastest: Bm4DnaDsSearch 0.044 ms
+model picks: Bm4DnaHmbsSearch (1.30×)</title><rect x="282" y="224" width="34" height="34" rx="4" fill="#1baf7a"/><text x="299" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="284.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=96, k=4
+fastest: Bm4DnaHmbsSearch 0.054 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="318" y="224" width="34" height="34" rx="4" fill="#e87ba4"/><text x="335" y="245" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>dna, n=10000, m=96, k=16
+fastest: Bm4DnaHmbsSearch 0.151 ms
+model picks: AhoCorasickSearch (1.46×)</title><rect x="354" y="224" width="34" height="34" rx="4" fill="#e87ba4"/><text x="371" y="245" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="356.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=10000, m=96, k=64
+fastest: WuManberSearch 0.206 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="544" y="68" font-size="11" fill="#0b0b0b" text-anchor="middle" font-weight="600">n = 1e5</text><text x="489" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>dna, n=100000, m=4, k=1
+fastest: ShiftOrSearch 0.463 ms
+model picks: ShiftOrSearch (1.00×)</title><rect x="472" y="80" width="34" height="34" rx="4" fill="#008300"/><text x="489" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text></g><text x="525" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>dna, n=100000, m=4, k=4
+fastest: ShiftOrSearch 0.677 ms
+model picks: ShiftOrSearch (1.00×)</title><rect x="508" y="80" width="34" height="34" rx="4" fill="#008300"/><text x="525" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text></g><text x="561" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>dna, n=100000, m=4, k=16
+fastest: AhoCorasickSearch 1.600 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="544" y="80" width="34" height="34" rx="4" fill="#eb6834"/><text x="561" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><text x="597" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>dna, n=100000, m=4, k=64
+fastest: AhoCorasickSearch 3.639 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="580" y="80" width="34" height="34" rx="4" fill="#eb6834"/><text x="597" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>dna, n=100000, m=12, k=1
+fastest: WuManberSearch 0.255 ms
+model picks: WuManberSearch (1.00×)</title><rect x="472" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="489" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=12, k=4
+fastest: WuManberSearch 0.285 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=12, k=16
+fastest: WuManberSearch 0.393 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=12, k=64
+fastest: WuManberSearch 0.540 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=24, k=1
+fastest: Bm4DnaHmbsSearch 0.211 ms
+model picks: WuManberSearch (1.02×)</title><rect x="472" y="152" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="173" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="474.5" y="154.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=100000, m=24, k=4
+fastest: WuManberSearch 0.231 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=24, k=16
+fastest: WuManberSearch 0.336 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=24, k=64
+fastest: WuManberSearch 0.453 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=48, k=1
+fastest: WuManberSearch 0.203 ms
+model picks: Bm4DnaHmbsSearch (1.65×)</title><rect x="472" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="489" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="474.5" y="190.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=100000, m=48, k=4
+fastest: WuManberSearch 0.283 ms
+model picks: Bm4DnaHmbsSearch (1.47×)</title><rect x="508" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="510.5" y="190.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=100000, m=48, k=16
+fastest: WuManberSearch 0.290 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=48, k=64
+fastest: WuManberSearch 0.566 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=96, k=1
+fastest: Bm4DnaHmbsSearch 0.190 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="472" y="224" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="245" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>dna, n=100000, m=96, k=4
+fastest: WuManberSearch 0.280 ms
+model picks: Bm4DnaHmbsSearch (1.59×)</title><rect x="508" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="510.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=100000, m=96, k=16
+fastest: WuManberSearch 0.414 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=100000, m=96, k=64
+fastest: WuManberSearch 0.411 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="734" y="68" font-size="11" fill="#0b0b0b" text-anchor="middle" font-weight="600">n = 1e6</text><text x="679" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>dna, n=1000000, m=4, k=1
+fastest: WuManberSearch 5.006 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="80" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="715" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>dna, n=1000000, m=4, k=4
+fastest: ShiftOrSearch 6.873 ms
+model picks: ShiftOrSearch (1.00×)</title><rect x="698" y="80" width="34" height="34" rx="4" fill="#008300"/><text x="715" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text></g><text x="751" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>dna, n=1000000, m=4, k=16
+fastest: AhoCorasickSearch 14.136 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="734" y="80" width="34" height="34" rx="4" fill="#eb6834"/><text x="751" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><text x="787" y="76" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>dna, n=1000000, m=4, k=64
+fastest: AhoCorasickSearch 43.245 ms
+model picks: WuManberSearch (1.60×)</title><rect x="770" y="80" width="34" height="34" rx="4" fill="#eb6834"/><text x="787" y="101" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text><rect x="772.5" y="82.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000000, m=12, k=1
+fastest: WuManberSearch 2.554 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=12, k=4
+fastest: WuManberSearch 3.059 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=12, k=16
+fastest: WuManberSearch 3.024 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=12, k=64
+fastest: WuManberSearch 3.673 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="116" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="137" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=24, k=1
+fastest: WuManberSearch 2.123 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=24, k=4
+fastest: WuManberSearch 2.326 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=24, k=16
+fastest: WuManberSearch 4.387 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=24, k=64
+fastest: WuManberSearch 2.773 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="152" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="173" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 1.819 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="662" y="188" width="34" height="34" rx="4" fill="#e87ba4"/><text x="679" y="209" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>dna, n=1000000, m=48, k=4
+fastest: WuManberSearch 2.322 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=48, k=16
+fastest: WuManberSearch 2.295 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=48, k=64
+fastest: WuManberSearch 4.305 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="188" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="209" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=96, k=1
+fastest: WuManberSearch 1.789 ms
+model picks: Bm4DnaHmbsSearch (1.64×)</title><rect x="662" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="664.5" y="226.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>dna, n=1000000, m=96, k=4
+fastest: WuManberSearch 2.003 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=96, k=16
+fastest: WuManberSearch 2.043 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>dna, n=1000000, m=96, k=64
+fastest: WuManberSearch 2.588 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="224" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="245" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="14" y="390" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="600">protein</text><text x="86" y="321" font-size="10" fill="#52514e" text-anchor="end">m=4</text><text x="109" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>protein, n=1000, m=4, k=1
+fastest: AhoCorasickSearch 0.022 ms
+model picks: RabinKarpSearch (1.27×)</title><rect x="92" y="300" width="34" height="34" rx="4" fill="#eb6834"/><text x="109" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text><rect x="94.5" y="302.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="145" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>protein, n=1000, m=4, k=4
+fastest: Bm4DnaDsSearch 0.018 ms
+model picks: ShiftOrSearch (1.39×)</title><rect x="128" y="300" width="34" height="34" rx="4" fill="#1baf7a"/><text x="145" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="130.5" y="302.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="181" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>protein, n=1000, m=4, k=16
+fastest: RabinKarpSearch 0.024 ms
+model picks: WuManberSearch (1.35×)</title><rect x="164" y="300" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="166.5" y="302.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="217" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>protein, n=1000, m=4, k=64
+fastest: RabinKarpSearch 0.041 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="300" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="357" font-size="10" fill="#52514e" text-anchor="end">m=12</text><g><title>protein, n=1000, m=12, k=1
+fastest: Bm4DnaHmbsSearch 0.013 ms
+model picks: RabinKarpSearch (1.08×)</title><rect x="92" y="336" width="34" height="34" rx="4" fill="#e87ba4"/><text x="109" y="357" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="94.5" y="338.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=12, k=4
+fastest: HorspoolSearch 0.014 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="128" y="336" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="357" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>protein, n=1000, m=12, k=16
+fastest: WuManberSearch 0.020 ms
+model picks: WuManberSearch (1.00×)</title><rect x="164" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="181" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000, m=12, k=64
+fastest: RabinKarpSearch 0.042 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="336" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="393" font-size="10" fill="#52514e" text-anchor="end">m=24</text><g><title>protein, n=1000, m=24, k=1
+fastest: BoyerMooreSearch 0.012 ms
+model picks: RabinKarpSearch (1.57×)</title><rect x="92" y="372" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="109" y="393" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="94.5" y="374.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=24, k=4
+fastest: HorspoolSearch 0.015 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="128" y="372" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="393" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>protein, n=1000, m=24, k=16
+fastest: RabinKarpSearch 0.024 ms
+model picks: Bm4DnaDsSearch (1.25×)</title><rect x="164" y="372" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="166.5" y="374.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=24, k=64
+fastest: RabinKarpSearch 0.050 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="372" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="429" font-size="10" fill="#52514e" text-anchor="end">m=48</text><g><title>protein, n=1000, m=48, k=1
+fastest: BoyerMooreSearch 0.018 ms
+model picks: RabinKarpSearch (1.11×)</title><rect x="92" y="408" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="109" y="429" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="94.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=48, k=4
+fastest: Bm4DnaDsSearch 0.021 ms
+model picks: HorspoolSearch (1.39×)</title><rect x="128" y="408" width="34" height="34" rx="4" fill="#1baf7a"/><text x="145" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="130.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=48, k=16
+fastest: RabinKarpSearch 0.040 ms
+model picks: Bm4DnaDsSearch (1.07×)</title><rect x="164" y="408" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="166.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=48, k=64
+fastest: RabinKarpSearch 0.105 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="408" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="465" font-size="10" fill="#52514e" text-anchor="end">m=96</text><g><title>protein, n=1000, m=96, k=1
+fastest: WuManberSearch 0.022 ms
+model picks: RabinKarpSearch (1.12×)</title><rect x="92" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="109" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="94.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=96, k=4
+fastest: HorspoolSearch 0.018 ms
+model picks: Bm4DnaHmbsSearch (1.29×)</title><rect x="128" y="444" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="130.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=96, k=16
+fastest: Bm4DnaDsSearch 0.038 ms
+model picks: Bm4DnaHmbsSearch (2.04×)</title><rect x="164" y="444" width="34" height="34" rx="4" fill="#1baf7a"/><text x="181" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="166.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000, m=96, k=64
+fastest: RabinKarpSearch 0.099 ms
+model picks: Bm4DnaHmbsSearch (2.62×)</title><rect x="200" y="444" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="202.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="299" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>protein, n=10000, m=4, k=1
+fastest: BoyerMooreSearch 0.041 ms
+model picks: HorspoolSearch (1.07×)</title><rect x="282" y="300" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="299" y="321" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="284.5" y="302.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="335" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>protein, n=10000, m=4, k=4
+fastest: WuManberSearch 0.059 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="300" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="371" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>protein, n=10000, m=4, k=16
+fastest: WuManberSearch 0.075 ms
+model picks: WuManberSearch (1.00×)</title><rect x="354" y="300" width="34" height="34" rx="4" fill="#2a78d6"/><text x="371" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="407" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>protein, n=10000, m=4, k=64
+fastest: AhoCorasickSearch 0.108 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="390" y="300" width="34" height="34" rx="4" fill="#eb6834"/><text x="407" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>protein, n=10000, m=12, k=1
+fastest: HorspoolSearch 0.034 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="282" y="336" width="34" height="34" rx="4" fill="#eda100"/><text x="299" y="357" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>protein, n=10000, m=12, k=4
+fastest: WuManberSearch 0.043 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=12, k=16
+fastest: WuManberSearch 0.049 ms
+model picks: WuManberSearch (1.00×)</title><rect x="354" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="371" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=12, k=64
+fastest: WuManberSearch 0.146 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=24, k=1
+fastest: HorspoolSearch 0.030 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="282" y="372" width="34" height="34" rx="4" fill="#eda100"/><text x="299" y="393" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>protein, n=10000, m=24, k=4
+fastest: WuManberSearch 0.036 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=24, k=16
+fastest: Bm4DnaDsSearch 0.090 ms
+model picks: Bm4DnaHmbsSearch (1.08×)</title><rect x="354" y="372" width="34" height="34" rx="4" fill="#1baf7a"/><text x="371" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="356.5" y="374.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=10000, m=24, k=64
+fastest: WuManberSearch 0.168 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.041 ms
+model picks: HorspoolSearch (1.09×)</title><rect x="282" y="408" width="34" height="34" rx="4" fill="#e87ba4"/><text x="299" y="429" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="284.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=10000, m=48, k=4
+fastest: HorspoolSearch 0.049 ms
+model picks: Bm4DnaHmbsSearch (1.03×)</title><rect x="318" y="408" width="34" height="34" rx="4" fill="#eda100"/><text x="335" y="429" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="320.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=10000, m=48, k=16
+fastest: Bm4DnaDsSearch 0.088 ms
+model picks: Bm4DnaHmbsSearch (1.04×)</title><rect x="354" y="408" width="34" height="34" rx="4" fill="#1baf7a"/><text x="371" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="356.5" y="410.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=10000, m=48, k=64
+fastest: WuManberSearch 0.165 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=10000, m=96, k=1
+fastest: BoyerMooreSearch 0.038 ms
+model picks: Bm4DnaHmbsSearch (1.05×)</title><rect x="282" y="444" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="299" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="284.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=10000, m=96, k=4
+fastest: Bm4DnaHmbsSearch 0.043 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="318" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="335" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>protein, n=10000, m=96, k=16
+fastest: Bm4DnaHmbsSearch 0.123 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="354" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="371" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>protein, n=10000, m=96, k=64
+fastest: WuManberSearch 0.221 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="489" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>protein, n=100000, m=4, k=1
+fastest: Bm4DnaDsSearch 0.286 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="472" y="300" width="34" height="34" rx="4" fill="#1baf7a"/><text x="489" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><text x="525" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>protein, n=100000, m=4, k=4
+fastest: WuManberSearch 0.401 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="300" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="561" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>protein, n=100000, m=4, k=16
+fastest: WuManberSearch 0.456 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="300" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="597" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>protein, n=100000, m=4, k=64
+fastest: AhoCorasickSearch 0.613 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="580" y="300" width="34" height="34" rx="4" fill="#eb6834"/><text x="597" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>protein, n=100000, m=12, k=1
+fastest: Bm4DnaDsSearch 0.224 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="472" y="336" width="34" height="34" rx="4" fill="#1baf7a"/><text x="489" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><g><title>protein, n=100000, m=12, k=4
+fastest: WuManberSearch 0.259 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=12, k=16
+fastest: WuManberSearch 0.282 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=12, k=64
+fastest: WuManberSearch 0.637 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=24, k=1
+fastest: WuManberSearch 0.335 ms
+model picks: WuManberSearch (1.00×)</title><rect x="472" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="489" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=24, k=4
+fastest: WuManberSearch 0.211 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=24, k=16
+fastest: WuManberSearch 0.295 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=24, k=64
+fastest: WuManberSearch 0.340 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.185 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="472" y="408" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="429" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>protein, n=100000, m=48, k=4
+fastest: WuManberSearch 0.191 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=48, k=16
+fastest: WuManberSearch 0.283 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=48, k=64
+fastest: WuManberSearch 0.337 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=96, k=1
+fastest: Bm4DnaHmbsSearch 0.175 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="472" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>protein, n=100000, m=96, k=4
+fastest: Bm4DnaHmbsSearch 0.208 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="508" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="525" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>protein, n=100000, m=96, k=16
+fastest: WuManberSearch 0.302 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=100000, m=96, k=64
+fastest: WuManberSearch 0.399 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="679" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>protein, n=1000000, m=4, k=1
+fastest: Bm4DnaDsSearch 3.004 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="662" y="300" width="34" height="34" rx="4" fill="#1baf7a"/><text x="679" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><text x="715" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>protein, n=1000000, m=4, k=4
+fastest: ShiftOrSearch 4.598 ms
+model picks: WuManberSearch (1.21×)</title><rect x="698" y="300" width="34" height="34" rx="4" fill="#008300"/><text x="715" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text><rect x="700.5" y="302.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="751" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>protein, n=1000000, m=4, k=16
+fastest: WuManberSearch 4.495 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="300" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="787" y="296" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>protein, n=1000000, m=4, k=64
+fastest: AhoCorasickSearch 5.671 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="770" y="300" width="34" height="34" rx="4" fill="#eb6834"/><text x="787" y="321" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>protein, n=1000000, m=12, k=1
+fastest: Bm4DnaDsSearch 2.388 ms
+model picks: WuManberSearch (1.62×)</title><rect x="662" y="336" width="34" height="34" rx="4" fill="#1baf7a"/><text x="679" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="664.5" y="338.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000000, m=12, k=4
+fastest: WuManberSearch 2.432 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=12, k=16
+fastest: WuManberSearch 3.892 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=12, k=64
+fastest: WuManberSearch 2.874 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="336" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="357" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=24, k=1
+fastest: Bm4DnaHmbsSearch 1.962 ms
+model picks: WuManberSearch (1.05×)</title><rect x="662" y="372" width="34" height="34" rx="4" fill="#e87ba4"/><text x="679" y="393" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="664.5" y="374.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000000, m=24, k=4
+fastest: WuManberSearch 2.053 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=24, k=16
+fastest: WuManberSearch 2.239 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=24, k=64
+fastest: WuManberSearch 3.820 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="372" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="393" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=48, k=1
+fastest: WuManberSearch 1.805 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=48, k=4
+fastest: WuManberSearch 1.849 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=48, k=16
+fastest: WuManberSearch 1.962 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=48, k=64
+fastest: WuManberSearch 2.021 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="408" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="429" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=96, k=1
+fastest: Bm4DnaHmbsSearch 1.998 ms
+model picks: WuManberSearch (1.38×)</title><rect x="662" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="679" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="664.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000000, m=96, k=4
+fastest: Bm4DnaHmbsSearch 2.080 ms
+model picks: WuManberSearch (1.07×)</title><rect x="698" y="444" width="34" height="34" rx="4" fill="#e87ba4"/><text x="715" y="465" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="700.5" y="446.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>protein, n=1000000, m=96, k=16
+fastest: WuManberSearch 1.962 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>protein, n=1000000, m=96, k=64
+fastest: WuManberSearch 2.021 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="444" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="465" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="14" y="610" font-size="12" fill="#0b0b0b" text-anchor="start" font-weight="600">text</text><text x="86" y="541" font-size="10" fill="#52514e" text-anchor="end">m=4</text><text x="109" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>text, n=1000, m=4, k=1
+fastest: ShiftOrSearch 0.017 ms
+model picks: RabinKarpSearch (2.40×)</title><rect x="92" y="520" width="34" height="34" rx="4" fill="#008300"/><text x="109" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text><rect x="94.5" y="522.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="145" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>text, n=1000, m=4, k=4
+fastest: ShiftOrSearch 0.018 ms
+model picks: ShiftOrSearch (1.00×)</title><rect x="128" y="520" width="34" height="34" rx="4" fill="#008300"/><text x="145" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text></g><text x="181" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>text, n=1000, m=4, k=16
+fastest: RabinKarpSearch 0.029 ms
+model picks: WuManberSearch (1.25×)</title><rect x="164" y="520" width="34" height="34" rx="4" fill="#6250d6"/><text x="181" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="166.5" y="522.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="217" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>text, n=1000, m=4, k=64
+fastest: WuManberSearch 0.042 ms
+model picks: WuManberSearch (1.00×)</title><rect x="200" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="217" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="86" y="577" font-size="10" fill="#52514e" text-anchor="end">m=12</text><g><title>text, n=1000, m=12, k=1
+fastest: HorspoolSearch 0.013 ms
+model picks: RabinKarpSearch (1.57×)</title><rect x="92" y="556" width="34" height="34" rx="4" fill="#eda100"/><text x="109" y="577" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="94.5" y="558.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=12, k=4
+fastest: RabinKarpSearch 0.017 ms
+model picks: HorspoolSearch (1.84×)</title><rect x="128" y="556" width="34" height="34" rx="4" fill="#6250d6"/><text x="145" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="130.5" y="558.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=12, k=16
+fastest: WuManberSearch 0.026 ms
+model picks: WuManberSearch (1.00×)</title><rect x="164" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="181" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000, m=12, k=64
+fastest: RabinKarpSearch 0.048 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="556" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="613" font-size="10" fill="#52514e" text-anchor="end">m=24</text><g><title>text, n=1000, m=24, k=1
+fastest: WuManberSearch 0.011 ms
+model picks: RabinKarpSearch (1.76×)</title><rect x="92" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="109" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="94.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=24, k=4
+fastest: HorspoolSearch 0.015 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="128" y="592" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="613" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>text, n=1000, m=24, k=16
+fastest: BoyerMooreSearch 0.038 ms
+model picks: Bm4DnaDsSearch (1.46×)</title><rect x="164" y="592" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="181" y="613" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="166.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=24, k=64
+fastest: RabinKarpSearch 0.059 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="592" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="649" font-size="10" fill="#52514e" text-anchor="end">m=48</text><g><title>text, n=1000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.017 ms
+model picks: RabinKarpSearch (1.53×)</title><rect x="92" y="628" width="34" height="34" rx="4" fill="#e87ba4"/><text x="109" y="649" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="94.5" y="630.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=48, k=4
+fastest: Bm4DnaDsSearch 0.016 ms
+model picks: HorspoolSearch (2.06×)</title><rect x="128" y="628" width="34" height="34" rx="4" fill="#1baf7a"/><text x="145" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="130.5" y="630.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=48, k=16
+fastest: Bm4DnaDsSearch 0.032 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="164" y="628" width="34" height="34" rx="4" fill="#1baf7a"/><text x="181" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><g><title>text, n=1000, m=48, k=64
+fastest: RabinKarpSearch 0.091 ms
+model picks: RabinKarpSearch (1.00×)</title><rect x="200" y="628" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text></g><text x="86" y="685" font-size="10" fill="#52514e" text-anchor="end">m=96</text><g><title>text, n=1000, m=96, k=1
+fastest: ShiftOrSearch 0.015 ms
+model picks: RabinKarpSearch (2.04×)</title><rect x="92" y="664" width="34" height="34" rx="4" fill="#008300"/><text x="109" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">SO</text><rect x="94.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=96, k=4
+fastest: HorspoolSearch 0.019 ms
+model picks: Bm4DnaHmbsSearch (1.01×)</title><rect x="128" y="664" width="34" height="34" rx="4" fill="#eda100"/><text x="145" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="130.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=96, k=16
+fastest: HorspoolSearch 0.039 ms
+model picks: Bm4DnaHmbsSearch (1.24×)</title><rect x="164" y="664" width="34" height="34" rx="4" fill="#eda100"/><text x="181" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text><rect x="166.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000, m=96, k=64
+fastest: RabinKarpSearch 0.112 ms
+model picks: Bm4DnaHmbsSearch (1.58×)</title><rect x="200" y="664" width="34" height="34" rx="4" fill="#6250d6"/><text x="217" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">RK</text><rect x="202.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="299" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>text, n=10000, m=4, k=1
+fastest: BoyerMooreSearch 0.041 ms
+model picks: HorspoolSearch (1.19×)</title><rect x="282" y="520" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="299" y="541" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="284.5" y="522.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="335" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>text, n=10000, m=4, k=4
+fastest: WuManberSearch 0.058 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="371" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>text, n=10000, m=4, k=16
+fastest: WuManberSearch 0.069 ms
+model picks: WuManberSearch (1.00×)</title><rect x="354" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="371" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="407" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>text, n=10000, m=4, k=64
+fastest: WuManberSearch 0.110 ms
+model picks: AhoCorasickSearch (1.04×)</title><rect x="390" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="392.5" y="522.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=12, k=1
+fastest: BoyerMooreSearch 0.035 ms
+model picks: HorspoolSearch (1.05×)</title><rect x="282" y="556" width="34" height="34" rx="4" fill="#b9b8b2"/><text x="299" y="577" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">BM</text><rect x="284.5" y="558.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=12, k=4
+fastest: WuManberSearch 0.044 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=12, k=16
+fastest: WuManberSearch 0.051 ms
+model picks: WuManberSearch (1.00×)</title><rect x="354" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="371" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=12, k=64
+fastest: WuManberSearch 0.145 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=24, k=1
+fastest: Bm4DnaDsSearch 0.035 ms
+model picks: HorspoolSearch (1.04×)</title><rect x="282" y="592" width="34" height="34" rx="4" fill="#1baf7a"/><text x="299" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="284.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=24, k=4
+fastest: Bm4DnaDsSearch 0.052 ms
+model picks: WuManberSearch (1.19×)</title><rect x="318" y="592" width="34" height="34" rx="4" fill="#1baf7a"/><text x="335" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="320.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=24, k=16
+fastest: Bm4DnaHmbsSearch 0.110 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="354" y="592" width="34" height="34" rx="4" fill="#e87ba4"/><text x="371" y="613" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>text, n=10000, m=24, k=64
+fastest: WuManberSearch 0.247 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.053 ms
+model picks: HorspoolSearch (1.02×)</title><rect x="282" y="628" width="34" height="34" rx="4" fill="#e87ba4"/><text x="299" y="649" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="284.5" y="630.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=48, k=4
+fastest: WuManberSearch 0.064 ms
+model picks: WuManberSearch (1.00×)</title><rect x="318" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="335" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=48, k=16
+fastest: Bm4DnaDsSearch 0.121 ms
+model picks: Bm4DnaHmbsSearch (1.35×)</title><rect x="354" y="628" width="34" height="34" rx="4" fill="#1baf7a"/><text x="371" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="356.5" y="630.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=48, k=64
+fastest: WuManberSearch 0.205 ms
+model picks: WuManberSearch (1.00×)</title><rect x="390" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="407" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=10000, m=96, k=1
+fastest: HorspoolSearch 0.034 ms
+model picks: HorspoolSearch (1.00×)</title><rect x="282" y="664" width="34" height="34" rx="4" fill="#eda100"/><text x="299" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HP</text></g><g><title>text, n=10000, m=96, k=4
+fastest: Bm4DnaDsSearch 0.043 ms
+model picks: Bm4DnaHmbsSearch (1.02×)</title><rect x="318" y="664" width="34" height="34" rx="4" fill="#1baf7a"/><text x="335" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="320.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=10000, m=96, k=16
+fastest: Bm4DnaHmbsSearch 0.083 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="354" y="664" width="34" height="34" rx="4" fill="#e87ba4"/><text x="371" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>text, n=10000, m=96, k=64
+fastest: Bm4DnaHmbsSearch 0.245 ms
+model picks: WuManberSearch (1.61×)</title><rect x="390" y="664" width="34" height="34" rx="4" fill="#e87ba4"/><text x="407" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="392.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="489" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>text, n=100000, m=4, k=1
+fastest: Bm4DnaDsSearch 0.306 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="472" y="520" width="34" height="34" rx="4" fill="#1baf7a"/><text x="489" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><text x="525" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>text, n=100000, m=4, k=4
+fastest: WuManberSearch 0.399 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="561" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>text, n=100000, m=4, k=16
+fastest: WuManberSearch 0.501 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="597" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>text, n=100000, m=4, k=64
+fastest: AhoCorasickSearch 0.686 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="580" y="520" width="34" height="34" rx="4" fill="#eb6834"/><text x="597" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>text, n=100000, m=12, k=1
+fastest: Bm4DnaDsSearch 0.224 ms
+model picks: WuManberSearch (1.10×)</title><rect x="472" y="556" width="34" height="34" rx="4" fill="#1baf7a"/><text x="489" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text><rect x="474.5" y="558.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=100000, m=12, k=4
+fastest: WuManberSearch 0.246 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=12, k=16
+fastest: WuManberSearch 0.294 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=12, k=64
+fastest: WuManberSearch 0.411 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=24, k=1
+fastest: WuManberSearch 0.203 ms
+model picks: Bm4DnaDsSearch (1.43×)</title><rect x="472" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="489" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text><rect x="474.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=100000, m=24, k=4
+fastest: WuManberSearch 0.383 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=24, k=16
+fastest: WuManberSearch 0.348 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=24, k=64
+fastest: WuManberSearch 0.340 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=48, k=1
+fastest: Bm4DnaHmbsSearch 0.181 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="472" y="628" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="649" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>text, n=100000, m=48, k=4
+fastest: WuManberSearch 0.194 ms
+model picks: WuManberSearch (1.00×)</title><rect x="508" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="525" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=48, k=16
+fastest: WuManberSearch 0.282 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=48, k=64
+fastest: WuManberSearch 0.335 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=96, k=1
+fastest: Bm4DnaHmbsSearch 0.181 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="472" y="664" width="34" height="34" rx="4" fill="#e87ba4"/><text x="489" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>text, n=100000, m=96, k=4
+fastest: Bm4DnaHmbsSearch 0.246 ms
+model picks: Bm4DnaHmbsSearch (1.00×)</title><rect x="508" y="664" width="34" height="34" rx="4" fill="#e87ba4"/><text x="525" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text></g><g><title>text, n=100000, m=96, k=16
+fastest: WuManberSearch 0.353 ms
+model picks: WuManberSearch (1.00×)</title><rect x="544" y="664" width="34" height="34" rx="4" fill="#2a78d6"/><text x="561" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=100000, m=96, k=64
+fastest: WuManberSearch 0.488 ms
+model picks: WuManberSearch (1.00×)</title><rect x="580" y="664" width="34" height="34" rx="4" fill="#2a78d6"/><text x="597" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="679" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=1</text><g><title>text, n=1000000, m=4, k=1
+fastest: Bm4DnaDsSearch 3.152 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="662" y="520" width="34" height="34" rx="4" fill="#1baf7a"/><text x="679" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><text x="715" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=4</text><g><title>text, n=1000000, m=4, k=4
+fastest: WuManberSearch 4.100 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="520" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><text x="751" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=16</text><g><title>text, n=1000000, m=4, k=16
+fastest: AhoCorasickSearch 5.557 ms
+model picks: WuManberSearch (1.06×)</title><rect x="734" y="520" width="34" height="34" rx="4" fill="#eb6834"/><text x="751" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text><rect x="736.5" y="522.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><text x="787" y="516" font-size="9" fill="#8a8984" text-anchor="middle">k=64</text><g><title>text, n=1000000, m=4, k=64
+fastest: AhoCorasickSearch 7.057 ms
+model picks: AhoCorasickSearch (1.00×)</title><rect x="770" y="520" width="34" height="34" rx="4" fill="#eb6834"/><text x="787" y="541" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">AC</text></g><g><title>text, n=1000000, m=12, k=1
+fastest: WuManberSearch 2.383 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=12, k=4
+fastest: WuManberSearch 2.373 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=12, k=16
+fastest: WuManberSearch 2.771 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=12, k=64
+fastest: WuManberSearch 2.845 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="556" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="577" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=24, k=1
+fastest: Bm4DnaDsSearch 1.968 ms
+model picks: Bm4DnaDsSearch (1.00×)</title><rect x="662" y="592" width="34" height="34" rx="4" fill="#1baf7a"/><text x="679" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">DS</text></g><g><title>text, n=1000000, m=24, k=4
+fastest: Bm4DnaHmbsSearch 2.974 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="592" width="34" height="34" rx="4" fill="#e87ba4"/><text x="715" y="613" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="700.5" y="594.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000000, m=24, k=16
+fastest: WuManberSearch 2.281 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=24, k=64
+fastest: WuManberSearch 2.294 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="592" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="613" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=48, k=1
+fastest: WuManberSearch 1.787 ms
+model picks: WuManberSearch (1.00×)</title><rect x="662" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="679" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=48, k=4
+fastest: Bm4DnaHmbsSearch 2.233 ms
+model picks: WuManberSearch (1.58×)</title><rect x="698" y="628" width="34" height="34" rx="4" fill="#e87ba4"/><text x="715" y="649" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="700.5" y="630.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000000, m=48, k=16
+fastest: WuManberSearch 3.438 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=48, k=64
+fastest: WuManberSearch 2.113 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="628" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="649" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=96, k=1
+fastest: Bm4DnaHmbsSearch 1.712 ms
+model picks: WuManberSearch (1.08×)</title><rect x="662" y="664" width="34" height="34" rx="4" fill="#e87ba4"/><text x="679" y="685" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="600">HM</text><rect x="664.5" y="666.5" width="29" height="29" rx="3" fill="none" stroke="#0b0b0b" stroke-width="2"/></g><g><title>text, n=1000000, m=96, k=4
+fastest: WuManberSearch 1.923 ms
+model picks: WuManberSearch (1.00×)</title><rect x="698" y="664" width="34" height="34" rx="4" fill="#2a78d6"/><text x="715" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=96, k=16
+fastest: WuManberSearch 2.183 ms
+model picks: WuManberSearch (1.00×)</title><rect x="734" y="664" width="34" height="34" rx="4" fill="#2a78d6"/><text x="751" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><g><title>text, n=1000000, m=96, k=64
+fastest: WuManberSearch 2.013 ms
+model picks: WuManberSearch (1.00×)</title><rect x="770" y="664" width="34" height="34" rx="4" fill="#2a78d6"/><text x="787" y="685" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">WM</text></g><rect x="92" y="750" width="12" height="12" rx="3" fill="#2a78d6"/><text x="108" y="760" font-size="10.5" fill="#52514e" text-anchor="start">WM WuManber</text><rect x="184" y="750" width="12" height="12" rx="3" fill="#eb6834"/><text x="200" y="760" font-size="10.5" fill="#52514e" text-anchor="start">AC AhoCorasick</text><rect x="297" y="750" width="12" height="12" rx="3" fill="#1baf7a"/><text x="313" y="760" font-size="10.5" fill="#52514e" text-anchor="start">DS Bm4DnaDs</text><rect x="389" y="750" width="12" height="12" rx="3" fill="#eda100"/><text x="405" y="760" font-size="10.5" fill="#52514e" text-anchor="start">HP Horspool</text><rect x="481" y="750" width="12" height="12" rx="3" fill="#e87ba4"/><text x="497" y="760" font-size="10.5" fill="#52514e" text-anchor="start">HM Bm4DnaHmbs</text><rect x="587" y="750" width="12" height="12" rx="3" fill="#008300"/><text x="603" y="760" font-size="10.5" fill="#52514e" text-anchor="start">SO ShiftOr</text><rect x="672" y="750" width="12" height="12" rx="3" fill="#6250d6"/><text x="688" y="760" font-size="10.5" fill="#52514e" text-anchor="start">RK RabinKarp</text><rect x="92" y="768" width="12" height="12" rx="3" fill="#b9b8b2"/><text x="108" y="778" font-size="10.5" fill="#52514e" text-anchor="start">BM BoyerMoore</text></svg>
