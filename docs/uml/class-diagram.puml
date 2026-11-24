@@ -1,0 +1,149 @@
+@startuml ExactMatch-full
+' PlantUML source of the full class diagram (same content as 00-full.mmd).
+' Render: https://www.plantuml.com/plantuml or `java -jar plantuml.jar class-diagram.puml`
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty members
+
+package "src/atomic (Template Method + Strategy)" {
+  abstract class ExactSearchAtom {
+    {static} +manifest : Manifest
+    {static} +selection : Selection
+    +params : Params
+    #original : string[]
+    #unique : string[]
+    #owners : number[][]
+    +constructor(params)
+    {static} +validateParams(params) : Params
+    #prepare(patterns) : void
+    {abstract} #findAll(text, hits) : void
+    +process(entry) : Iterable<Match>
+    +run(entries) : Iterable<Match>
+  }
+  class NaiveSearch
+  class BoyerMooreSearch
+  class HorspoolSearch
+  class Bm4DnaDsSearch
+  class Bm4DnaHmbsSearch
+  class ShiftOrSearch
+  class KmpSearch
+  class RabinKarpSearch
+  class AhoCorasickSearch
+  class WuManberSearch
+  class SuffixArraySearch
+  class FmIndexSearch
+  ExactSearchAtom <|-- NaiveSearch
+  ExactSearchAtom <|-- BoyerMooreSearch
+  ExactSearchAtom <|-- HorspoolSearch
+  ExactSearchAtom <|-- Bm4DnaDsSearch
+  ExactSearchAtom <|-- Bm4DnaHmbsSearch
+  ExactSearchAtom <|-- ShiftOrSearch
+  ExactSearchAtom <|-- KmpSearch
+  ExactSearchAtom <|-- RabinKarpSearch
+  ExactSearchAtom <|-- AhoCorasickSearch
+  ExactSearchAtom <|-- WuManberSearch
+  ExactSearchAtom <|-- SuffixArraySearch
+  ExactSearchAtom <|-- FmIndexSearch
+}
+
+class HitCollector {
+  -keys : Float64Array
+  +add(unique, position) : void
+  +ordered() : Iterable<[pos, idx]>
+}
+ExactSearchAtom ..> HitCollector : creates
+
+package "src/molecules + src/selection" {
+  class ExactMatch {
+    {static} +manifest : Manifest
+    +params : Params
+    +record : Record
+    -atom : ExactSearchAtom
+    +constructor(params, deps)
+    +decide(firstEntry) : Record
+    +run(entries) : Iterable<Match>
+    +process(entry) : Iterable<Match>
+    #createAtom(name, params) : ExactSearchAtom
+  }
+  class AtomRegistry {
+    -atoms : Map
+    +register(AtomClass) : AtomRegistry
+    +unregister(name) : boolean
+    +get(name) : AtomClass
+    +has(name) : boolean
+    +names() : string[]
+    +atoms() : AtomClass[]
+    +clone() : AtomRegistry
+  }
+  class AtomFactory {
+    +create(name, params) : ExactSearchAtom
+  }
+  class CostModel {
+    +coefficientsFor(AtomClass) : Coef
+    +estimate(AtomClass, shape) : Estimate
+  }
+  class ShapeBuilder {
+    +withPatterns(patterns, ignoreCase) : ShapeBuilder
+    +withText(text) : ShapeBuilder
+    +build() : Shape
+  }
+  abstract class SelectionHandler {
+    +next : SelectionHandler
+    +setNext(h) : SelectionHandler
+    +handle(ctx) : Context
+  }
+  class ForcedStrategyHandler
+  class ApplicabilityHandler
+  class CostEstimationHandler
+  class CheapestAtomHandler
+  SelectionHandler <|-- ForcedStrategyHandler
+  SelectionHandler <|-- ApplicabilityHandler
+  SelectionHandler <|-- CostEstimationHandler
+  SelectionHandler <|-- CheapestAtomHandler
+  SelectionHandler --> SelectionHandler : next
+}
+ExactMatch --> SelectionHandler : chain
+ExactMatch --> AtomRegistry
+ExactMatch --> CostModel
+ExactMatch --> AtomFactory
+ExactMatch ..> ShapeBuilder
+ExactMatch o--> ExactSearchAtom : chosen
+AtomFactory --> AtomRegistry
+AtomRegistry o--> "1..*" ExactSearchAtom
+CostEstimationHandler ..> CostModel
+
+package "src/cli + Facade" {
+  class IoSFacade {
+    +listComponents() : Manifest[]
+    +createMolecule(component, opts) : ExactMatch
+    +run(fasta, opts, component) : RunResult
+    +explain(fasta, opts, component) : Record
+    +runJsonl(fasta, opts, component) : Iterable<string>
+  }
+  abstract class Command {
+    +args : string[]
+    {abstract} +execute(io) : Promise<number>
+  }
+  class RunCommand
+  class ExplainCommand
+  class ListCommand
+  class HelpCommand
+  class CommandFactory {
+    {static} +create(argv) : Command
+  }
+  Command <|-- RunCommand
+  Command <|-- ExplainCommand
+  Command <|-- ListCommand
+  Command <|-- HelpCommand
+  CommandFactory ..> Command : creates
+}
+RunCommand ..> IoSFacade
+ExplainCommand ..> IoSFacade
+ListCommand ..> IoSFacade
+IoSFacade ..> ExactMatch : creates
+
+note right of ExactSearchAtom : Template Method:\nprocess() fixed, hooks prepare()/findAll()
+note bottom of SelectionHandler : Chain of Responsibility
+note top of IoSFacade : Facade
+note top of AtomFactory : Factory Method
+@enduml

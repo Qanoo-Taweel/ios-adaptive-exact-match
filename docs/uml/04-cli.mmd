@@ -1,0 +1,43 @@
+---
+title: Command line — Facade + Command + Factory Method
+---
+classDiagram
+  direction LR
+  class IoSFacade {
+    +registry AtomRegistry
+    +listComponents() Manifest[]
+    +createMolecule(component, opts) ExactMatch
+    +run(fastaText, opts, component) RunResult
+    +explain(fastaText, opts, component) Record
+    +runJsonl(fastaText, opts, component) Iterable~string~
+  }
+  class Command {
+    <<abstract>>
+    +args string[]
+    +execute(io)* Promise~number~
+  }
+  class RunCommand { +execute(io) }
+  class ExplainCommand { +execute(io) }
+  class ListCommand { +execute(io) }
+  class HelpCommand { +execute(io) }
+  class CommandFactory {
+    -commands$ Map
+    +create(argv)$ Command
+  }
+  class FastaReader {
+    <<module>>
+    +parseFasta(text) Iterable~Entry~
+    +readFasta(text) Entry[]
+  }
+  class ExactMatch
+  Command <|-- RunCommand
+  Command <|-- ExplainCommand
+  Command <|-- ListCommand
+  Command <|-- HelpCommand
+  CommandFactory ..> Command : creates
+  RunCommand ..> IoSFacade
+  ExplainCommand ..> IoSFacade
+  ListCommand ..> IoSFacade
+  IoSFacade ..> FastaReader
+  IoSFacade ..> ExactMatch : creates
+  note for IoSFacade "Facade: CLI and web demo use only this class."

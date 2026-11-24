@@ -1,0 +1,34 @@
+---
+title: "Sequence: node bin/ios.js explain --patterns ACGT,GGCC < in.fasta"
+---
+sequenceDiagram
+  autonumber
+  actor User
+  participant CLI as bin/ios.js
+  participant F as CommandFactory
+  participant C as ExplainCommand
+  participant Fa as IoSFacade
+  participant EM as ExactMatch
+  participant SB as ShapeBuilder
+  participant Ch as Selection chain
+  participant CM as CostModel
+  participant AF as AtomFactory
+  User->>CLI: argv + FASTA on stdin
+  CLI->>F: create(argv)
+  F-->>CLI: ExplainCommand
+  CLI->>C: execute(io)
+  C->>Fa: explain(fasta, {patterns})
+  Fa->>EM: new ExactMatch(params)
+  Fa->>EM: decide(first record)
+  EM->>SB: withPatterns().withText().build()
+  SB-->>EM: shape {n, σ, k, m…}
+  EM->>Ch: handle(ctx)
+  Note over Ch: Forced → Applicability → CostEstimation → Cheapest
+  Ch->>CM: estimate(atom, shape) for each applicable atom
+  CM-->>Ch: seconds
+  Ch-->>EM: selected + why + estimates
+  EM->>AF: create(selected, params)
+  AF-->>EM: atom instance
+  EM-->>Fa: record
+  Fa-->>C: record
+  C-->>User: JSON on stdout

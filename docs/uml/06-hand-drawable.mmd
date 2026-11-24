@@ -1,0 +1,57 @@
+---
+title: Hand-drawable version (9 boxes, all key methods)
+---
+classDiagram
+  direction TB
+  class ExactSearchAtom {
+    <<abstract>>
+    +process(entry)
+    #prepare(patterns)
+    #findAll(text, hits)*
+  }
+  class XxxSearch {
+    12 atoms: Horspool, BM, DS, HMbs,
+    ShiftOr, KMP, RK, AC, WM, SA, FM, Naive
+    #prepare(patterns)
+    #findAll(text, hits)
+  }
+  class ExactMatch {
+    +record
+    +decide(firstEntry)
+    +run(entries)
+    #createAtom(name, params)
+  }
+  class AtomRegistry {
+    +register(Atom)
+    +get(name)
+    +atoms()
+  }
+  class AtomFactory {
+    +create(name, params)
+  }
+  class SelectionHandler {
+    <<abstract>>
+    +setNext(h)
+    +handle(ctx)
+  }
+  class CostModel {
+    +estimate(Atom, shape)
+  }
+  class ShapeBuilder {
+    +withPatterns(p)
+    +withText(t)
+    +build()
+  }
+  class IoSFacade {
+    +run(fasta, opts)
+    +explain(fasta, opts)
+  }
+  ExactSearchAtom <|-- XxxSearch
+  ExactMatch o--> ExactSearchAtom
+  ExactMatch --> SelectionHandler
+  ExactMatch --> AtomFactory
+  ExactMatch ..> ShapeBuilder
+  SelectionHandler --> SelectionHandler : next
+  SelectionHandler ..> CostModel
+  AtomFactory --> AtomRegistry
+  IoSFacade ..> ExactMatch

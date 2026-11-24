@@ -1,0 +1,30 @@
+---
+title: Architecture overview (IoS layers)
+---
+flowchart LR
+  subgraph CLI["Interface layer"]
+    bin["bin/ios.js"] --> cmd["CommandFactory → Run / Explain / List"]
+    cmd --> fac["IoSFacade"]
+    web["docs/demo (browser)"] --> fac
+  end
+  subgraph MOL["Molecule layer"]
+    em["ExactMatch"] --> chain["Selection chain"]
+    chain --> cm["CostModel + coefficients.js"]
+    em --> sb["ShapeBuilder"]
+    em --> af["AtomFactory"]
+    af --> reg["AtomRegistry"]
+  end
+  subgraph ATOM["Atom layer (12 atoms)"]
+    base["ExactSearchAtom (Template Method)"]
+    a1["Horspool · BM · bm4DNADS · bm4DNAHMbs · Shift-Or"]
+    a2["KMP · Rabin-Karp · Aho-Corasick · Wu-Manber"]
+    a3["Suffix array · FM-index · Naive (oracle)"]
+    base --- a1 & a2 & a3
+  end
+  subgraph FN["Function layer (pure)"]
+    f["src/functions/*.js: algorithm cores, alphabet, hits, costs"]
+  end
+  fac --> em
+  reg --> base
+  a1 & a2 & a3 --> f
+  bench["bench/calibrate.js"] -. writes .-> cm

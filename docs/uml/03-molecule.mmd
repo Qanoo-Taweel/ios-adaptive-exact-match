@@ -1,0 +1,67 @@
+---
+title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry, Builder
+---
+classDiagram
+  direction LR
+  class ExactMatch {
+    +manifest$ Manifest
+    +params Params
+    +record Record
+    -atom ExactSearchAtom
+    +constructor(params, deps)
+    +decide(firstEntry) Record
+    +run(entries) Iterable~Match~
+    +process(entry) Iterable~Match~
+    #createAtom(name, params) ExactSearchAtom
+  }
+  class AtomRegistry {
+    -atoms Map
+    +register(AtomClass) AtomRegistry
+    +unregister(name) boolean
+    +get(name) AtomClass
+    +has(name) boolean
+    +names() string[]
+    +atoms() AtomClass[]
+    +clone() AtomRegistry
+  }
+  class AtomFactory {
+    +registry AtomRegistry
+    +create(name, params) ExactSearchAtom
+  }
+  class CostModel {
+    +calibration Calibration
+    +coefficientsFor(AtomClass) Coef
+    +estimate(AtomClass, shape) Estimate
+  }
+  class ShapeBuilder {
+    +withPatterns(patterns, ignoreCase) ShapeBuilder
+    +withText(text) ShapeBuilder
+    +build() Shape
+  }
+  class SelectionHandler {
+    <<abstract>>
+    +next SelectionHandler
+    +setNext(handler) SelectionHandler
+    +handle(ctx) Context
+  }
+  class ForcedStrategyHandler { +handle(ctx) }
+  class ApplicabilityHandler { +handle(ctx) }
+  class CostEstimationHandler { +handle(ctx) }
+  class CheapestAtomHandler { +handle(ctx) }
+  class ExactSearchAtom { <<abstract>> }
+  SelectionHandler <|-- ForcedStrategyHandler
+  SelectionHandler <|-- ApplicabilityHandler
+  SelectionHandler <|-- CostEstimationHandler
+  SelectionHandler <|-- CheapestAtomHandler
+  SelectionHandler --> SelectionHandler : next
+  ExactMatch --> SelectionHandler : chain
+  ExactMatch --> AtomRegistry : registry
+  ExactMatch --> CostModel : costModel
+  ExactMatch --> AtomFactory : factory
+  ExactMatch ..> ShapeBuilder : shapeOf()
+  ExactMatch o--> ExactSearchAtom : chosen atom
+  AtomFactory --> AtomRegistry
+  AtomRegistry o--> "1..*" ExactSearchAtom : registered classes
+  CostEstimationHandler ..> CostModel
+  note for ExactMatch "Open/Closed: never names a concrete atom.\nDependency Inversion: registry, cost model,\nfactory and chain are injected."
+  note for SelectionHandler "Chain of Responsibility:\nForced → Applicability → CostEstimation → Cheapest"
