@@ -42,8 +42,8 @@ function fig1() {
   const cell = 34, gap = 2, pw = ks.length * (cell + gap), ph = ms.length * (cell + gap);
   const left = 92, top = 64, colGap = 46, rowGap = 40;
   const W = left + ns.length * (pw + colGap) + 10, H = top + alphabets.length * (ph + rowGap) + 70;
-  let b = txt(left, 22, 'Fastest atom on the calibration grid (rows: pattern length m, columns: pattern count k)', { size: 13, fill: INK, weight: 600 });
-  b += txt(left, 40, 'A ring marks cells where the fitted cost model picks a different atom (in-sample).', { size: 11 });
+  let b = txt(left, 22, 'Kalibrasyon ızgarasında en hızlı atom (satır: desen uzunluğu m, sütun: desen sayısı k)', { size: 13, fill: INK, weight: 600 });
+  b += txt(left, 40, 'Halka: uydurulan maliyet modelinin farklı bir atom seçtiği hücre (örnek içi).', { size: 11 });
   const used = new Set();
   let wrong = 0;
   alphabets.forEach((a, ai) => {
@@ -76,7 +76,7 @@ function fig1() {
   for (const [name, st] of Object.entries(ATOM_STYLE)) {
     if (!used.has(name)) continue;
     b += `<rect x="${lx}" y="${ly - 10}" width="12" height="12" rx="3" fill="${st.color}"/>` + txt(lx + 16, ly, `${st.code} ${name.replace('Search', '')}`, { size: 10.5 });
-    lx += 26 + 7 * (name.length - 6) + 10;
+    lx += 150;
     if (lx > W - 120) { lx = left; ly += 18; }
   }
   writeFileSync(new URL('fig1-winners.svg', OUT), svg(W, H + 10, b, 'Fastest atom per calibration case'));
@@ -89,8 +89,8 @@ function fig2() {
   const W = 720, rowH = 24, left = 250, top = 54, H = top + rows.length * rowH + 50;
   const maxV = Math.max(...rows.map((r) => r.geoMean));
   const lx = (v) => left + (Math.log(v) / Math.log(maxV * 1.15)) * (W - left - 80);
-  let b = txt(16, 22, 'Validation (184 unseen cases): geometric-mean slowdown vs. the fastest atom', { size: 13, fill: INK, weight: 600 });
-  b += txt(16, 40, 'log scale, 1.0 = always the fastest; lower is better', { size: 11 });
+  let b = txt(16, 22, `Doğrulama (${val.results.length} görülmemiş vaka): en hızlı atoma göre geometrik ortalama yavaşlama`, { size: 13, fill: INK, weight: 600 });
+  b += txt(16, 40, 'log ölçek; 1,0 = her zaman en hızlı; düşük daha iyi', { size: 11 });
   for (const t of [1, 1.5, 2, 3, 5, 10, 20, 50].filter((t) => t <= maxV * 1.15)) {
     b += `<line x1="${lx(t)}" x2="${lx(t)}" y1="${top - 6}" y2="${top + rows.length * rowH}" stroke="${GRIDC}"/>` + txt(lx(t), top + rows.length * rowH + 14, `${t}×`, { anchor: 'middle', size: 10, fill: MUTED });
   }
@@ -100,7 +100,7 @@ function fig2() {
     const color = isEM ? '#2a78d6' : isA ? '#eb6834' : GRAY;
     const w = Math.max(3, lx(r.geoMean) - left);
     b += `<g><title>${esc(`${r.policy}\ngeo-mean ${r.geoMean.toFixed(3)}, worst ${r.worst.toFixed(2)}×, picks fastest ${(r.pickFastest * 100).toFixed(1)}%`)}</title>`;
-    b += txt(left - 8, y + 15, r.policy.replace('Search', ''), { anchor: 'end', size: 11, fill: isEM || isA ? INK : INK2, weight: isEM ? 600 : undefined });
+    b += txt(left - 8, y + 15, r.policy.replace('Search', '').replace('always ', 'hep ').replace('Allmer 2016 rule', 'Allmer 2016 kuralı'), { anchor: 'end', size: 11, fill: isEM || isA ? INK : INK2, weight: isEM ? 600 : undefined });
     b += `<path d="M${left} ${y + 5}h${w - 4}a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h${-(w - 4)}z" fill="${color}"/>`;
     b += txt(left + w + 6, y + 15, r.geoMean.toFixed(2), { size: 10.5, fill: INK });
     b += '</g>';
@@ -114,14 +114,14 @@ function fig3() {
   const bestSingle = val.tables.ALL.filter((r) => r.policy.startsWith('always')).sort((a, b) => a.geoMean - b.geoMean)[0].policy.replace('always ', '');
   const series = [
     ['ExactMatch (auto)', (r) => r.times[r.chosen] / r.bestMs, '#2a78d6'],
-    ['Allmer 2016 rule', (r) => r.times[r.allmer] / r.bestMs, '#eb6834'],
-    [`always ${bestSingle.replace('Search', '')} (best single atom)`, (r) => r.times[bestSingle] / r.bestMs, '#1baf7a'],
+    ['Allmer 2016 kuralı', (r) => r.times[r.allmer] / r.bestMs, '#eb6834'],
+    [`hep ${bestSingle.replace('Search', '')} (en iyi sabit atom)`, (r) => r.times[bestSingle] / r.bestMs, '#1baf7a'],
   ];
   const W = 720, H = 360, left = 60, right = 24, top = 48, bottom = 48;
   const maxS = Math.min(20, Math.max(...series.flatMap(([, f]) => res.map(f))));
   const x = (v) => left + (Math.log(v) / Math.log(maxS)) * (W - left - right);
   const y = (p) => top + (1 - p) * (H - top - bottom);
-  let b = txt(16, 22, 'Share of validation cases within a given slowdown (ECDF, higher-left is better)', { size: 13, fill: INK, weight: 600 });
+  let b = txt(16, 22, 'Belirli bir yavaşlamanın altında kalan vaka oranı (ECDF; sol üst daha iyi)', { size: 13, fill: INK, weight: 600 });
   for (const t of [1, 1.1, 1.5, 2, 3, 5, 10, 20].filter((t) => t <= maxS)) b += `<line x1="${x(t)}" x2="${x(t)}" y1="${top}" y2="${H - bottom}" stroke="${GRIDC}"/>` + txt(x(t), H - bottom + 16, `${t}×`, { anchor: 'middle', size: 10, fill: MUTED });
   for (const p of [0, 0.25, 0.5, 0.75, 1]) b += `<line x1="${left}" x2="${W - right}" y1="${y(p)}" y2="${y(p)}" stroke="${GRIDC}"/>` + txt(left - 6, y(p) + 4, `${p * 100}%`, { anchor: 'end', size: 10, fill: MUTED });
   series.forEach(([name, f, color], si) => {
@@ -131,9 +131,9 @@ function fig3() {
     d += `H${x(maxS)}`;
     b += `<path d="${d}" fill="none" stroke="${color}" stroke-width="2"/>`;
     const at11 = v.filter((s) => s <= 1.1).length / v.length;
-    b += `<rect x="${W - 300}" y="${H - bottom - 76 + si * 18}" width="12" height="3" fill="${color}"/>` + txt(W - 282, H - bottom - 71 + si * 18, `${name}: ${(at11 * 100).toFixed(0)}% within 10%`, { size: 10.5, fill: INK });
+    b += `<rect x="${W - 300}" y="${H - bottom - 76 + si * 18}" width="12" height="3" fill="${color}"/>` + txt(W - 282, H - bottom - 71 + si * 18, `${name}: %${(at11 * 100).toFixed(0)} vaka %10 içinde`, { size: 10.5, fill: INK });
   });
-  b += txt(left + (W - left - right) / 2, H - 10, 'slowdown = chosen time / fastest time (log scale)', { anchor: 'middle', size: 10.5 });
+  b += txt(left + (W - left - right) / 2, H - 10, 'yavaşlama = seçilen süre / en hızlı süre (log ölçek)', { anchor: 'middle', size: 10.5 });
   writeFileSync(new URL('fig3-cdf.svg', OUT), svg(W, H, b, 'Slowdown distribution'));
 }
 
@@ -146,7 +146,7 @@ function fig4() {
   const L0 = Math.floor(Math.log10(Math.max(lo, 1e-3))), L1 = Math.ceil(Math.log10(hi));
   const sx = (v) => left + ((Math.log10(Math.max(v, 10 ** L0)) - L0) / (L1 - L0)) * (W - left - right);
   const sy = (v) => H - bottom - ((Math.log10(Math.max(v, 10 ** L0)) - L0) / (L1 - L0)) * (H - top - bottom);
-  let b = txt(16, 22, 'Cost model: predicted vs. measured time (all atoms, validation)', { size: 13, fill: INK, weight: 600 });
+  let b = txt(16, 22, 'Maliyet modeli: tahmin ve ölçülen süre (bütün atomlar, doğrulama)', { size: 13, fill: INK, weight: 600 });
   for (let e = L0; e <= L1; e++) {
     const lab = e >= 0 ? `${10 ** e} ms` : `${(10 ** e).toFixed(-e)} ms`;
     b += `<line x1="${sx(10 ** e)}" x2="${sx(10 ** e)}" y1="${top}" y2="${H - bottom}" stroke="${GRIDC}"/>` + txt(sx(10 ** e), H - bottom + 14, lab, { anchor: 'middle', size: 9.5, fill: MUTED });
@@ -155,10 +155,10 @@ function fig4() {
   b += `<line x1="${sx(10 ** L0)}" y1="${sy(10 ** L0)}" x2="${sx(10 ** L1)}" y2="${sy(10 ** L1)}" stroke="${INK2}" stroke-dasharray="4 4"/>`;
   for (const [p, t, chosen] of pts) if (!chosen) b += `<circle cx="${sx(p).toFixed(1)}" cy="${sy(t).toFixed(1)}" r="2.2" fill="${GRAY}" fill-opacity="0.7"/>`;
   for (const [p, t, chosen, name, id] of pts) if (chosen) b += `<circle cx="${sx(p).toFixed(1)}" cy="${sy(t).toFixed(1)}" r="4" fill="#2a78d6" stroke="${SURF}" stroke-width="1.5"><title>${esc(`${id} ${name}: predicted ${p} ms, measured ${t} ms`)}</title></circle>`;
-  b += txt(left + (W - left - right) / 2, H - 14, 'predicted (ms)', { anchor: 'middle', size: 10.5 });
-  b += `<text transform="translate(16 ${(top + H - bottom) / 2}) rotate(-90)" font-size="10.5" fill="${INK2}" text-anchor="middle">measured (ms)</text>`;
-  b += `<circle cx="${left + 12}" cy="${top + 8}" r="4" fill="#2a78d6"/>` + txt(left + 22, top + 12, 'atom chosen by ExactMatch', { size: 10.5, fill: INK });
-  b += `<circle cx="${left + 12}" cy="${top + 26}" r="3" fill="${GRAY}"/>` + txt(left + 22, top + 30, 'other atoms; dashed = perfect prediction', { size: 10.5, fill: INK });
+  b += txt(left + (W - left - right) / 2, H - 14, 'tahmin (ms)', { anchor: 'middle', size: 10.5 });
+  b += `<text transform="translate(16 ${(top + H - bottom) / 2}) rotate(-90)" font-size="10.5" fill="${INK2}" text-anchor="middle">ölçülen (ms)</text>`;
+  b += `<circle cx="${left + 12}" cy="${top + 8}" r="4" fill="#2a78d6"/>` + txt(left + 22, top + 12, 'ExactMatch\'in seçtiği atom', { size: 10.5, fill: INK });
+  b += `<circle cx="${left + 12}" cy="${top + 26}" r="3" fill="${GRAY}"/>` + txt(left + 22, top + 30, 'diğer atomlar; kesikli çizgi = kusursuz tahmin', { size: 10.5, fill: INK });
   writeFileSync(new URL('fig4-accuracy.svg', OUT), svg(W, H, b, 'Predicted vs measured time'));
 }
 
