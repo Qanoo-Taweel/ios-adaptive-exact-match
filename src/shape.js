@@ -14,6 +14,9 @@ import { foldAscii } from './functions/alphabet.js';
  * folded patterns) are attached as NON-ENUMERABLE properties: atoms can read
  * them in `features(shape)`, but they stay out of `record.shape` and JSON.
  */
+const SAMPLE_LIMIT = 1 << 16, BLOCKS = 64, BLOCK = 1024;
+const SEEN = new Uint32Array(65536); // shared scratch table, always left all-zero
+
 export class ShapeBuilder {
   #patterns = [];
   #ignoreCase = false;
@@ -36,20 +39,35 @@ export class ShapeBuilder {
     const patterns = this.#patterns.map(fold);
     const n = text.length;
 
-    // Text alphabet and character frequencies (one pass over the first record).
-    const counts = new Map();
-    const seen = new Uint32Array(65536);
-    for (let i = 0; i < n; i++) seen[text.charCodeAt(i)]++;
-    let sigma = 0;
-    for (let c = 0; c < 65536; c++) {
-      if (seen[c] !== 0) { sigma++; counts.set(c, seen[c]); }
+    // Text alphabet and character frequencies of the first record.
+    // Texts up to 2^16 characters are scanned completely; longer texts are
+    // sampled in 64 evenly spaced blocks of 1024 characters (65 536 chars), so
+    // the decision costs ~0.1 ms instead of growing with n. σ is then an
+    // estimate (a character rarer than ~1/65 536 can be missed); `sampled`
+    // says so in the record.
+    const chars = [];
+    let counted = 0;
+    const count = (from, to) => {
+      for (let i = from; i < to; i++) {
+        const c = text.charCodeAt(i);
+        if (SEEN[c]++ === 0) chars.push(c);
+      }
+      counted += to - from;
+    };
+    const sampled = n > SAMPLE_LIMIT;
+    if (!sampled) count(0, n);
+    else {
+      const step = Math.floor((n - BLOCK) / (BLOCKS - 1));
+      for (let b = 0; b < BLOCKS; b++) count(b * step, b * step + BLOCK);
     }
+    const sigma = chars.length;
     const freq = new Map();
     let collision = 0;
-    for (const [c, cnt] of counts) {
-      const f = cnt / n;
+    for (const c of chars) {
+      const f = SEEN[c] / counted;
       freq.set(c, f);
       collision += f * f;
+      SEEN[c] = 0; // reset the shared counter table for the next call
     }
 
     const lens = patterns.map((p) => p.length);
@@ -71,6 +89,7 @@ export class ShapeBuilder {
       patternSigma: patChars.size,
       collision: round(collision, 6), // Σ f(c)², probability that two random text chars are equal
       ignoreCase: this.#ignoreCase,
+      sampled,
     };
     Object.defineProperty(shape, 'freq', { value: freq, enumerable: false });
     Object.defineProperty(shape, 'patterns', { value: [...distinct], enumerable: false });
