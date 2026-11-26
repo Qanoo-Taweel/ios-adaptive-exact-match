@@ -181,7 +181,7 @@ ${['V', 'S', 'R'].map((s) => `<h3>${{ V: `Küme V: ${T.V[0].n} çok desenli vaka
 <tr><td>Command</td><td><code>RunCommand</code>, <code>ExplainCommand</code>…</td><td>Her CLI fiili test edilebilir bir nesne.</td></tr>
 <tr><td>Builder</td><td><code>ShapeBuilder</code></td><td>Veri şekli molekülde, ölçümde ve testlerde aynı yoldan kurulur.</td></tr>
 </table>
-<p class="note">UML sınıf diyagramları (tam, molekül, atomlar, CLI, sıra diyagramı ve elle çizilebilir sürüm): <code>docs/uml/</code>.</p>
+<p class="note">UML sınıf diyagramları (tam, molekül, atomlar, CLI, sıra diyagramı ve özet sınıf diyagramı): <code>docs/uml/</code>.</p>
 </section>
 </body></html>`;
 

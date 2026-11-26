@@ -1,5 +1,5 @@
 /**
- * Timing helpers. Rules from the brief (§6, Görev 4):
+ * Timing helpers. Rules from the assignment (§6, Görev 4):
  *   - a warm-up run before measuring,
  *   - at least 3 repetitions, the MEDIAN is reported,
  *   - very short runs (< MIN_SAMPLE_MS) are repeated inside one sample and

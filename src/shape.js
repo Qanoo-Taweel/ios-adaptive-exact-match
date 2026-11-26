@@ -2,7 +2,7 @@ import { foldAscii } from './functions/alphabet.js';
 
 /**
  * Data shape ("veri şekli") of an input: what the molecule looks at before
- * choosing an atom. Required by the brief: n, σ, k, min/max/mean pattern
+ * choosing an atom. Required by the assignment: n, σ, k, min/max/mean pattern
  * length. We add a few cheap extras the cost model uses.
  *
  * PATTERN: Builder. ShapeBuilder assembles the shape step by step

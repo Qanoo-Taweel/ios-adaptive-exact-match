@@ -16,7 +16,7 @@ UML = Path(__file__).resolve().parent.parent / "docs" / "uml"
 OUT = UML / "UML-diagrams.pdf"
 AUTHORS = "Qunoo A K Taweel (23291712) · Zeynep Arıcan (24290319)"
 PAGES = [  # (file, page title)
-    ("06-hand-drawable", "Özet sınıf diyagramı (9 kutu, temel metotlar)"),
+    ("06-core-classes", "Temel sınıflar (özet sınıf diyagramı, 9 sınıf)"),
     ("01-overview", "Mimari: IoS katmanları"),
     ("02-atoms", "Atomlar: Template Method + Strategy"),
     ("03-molecule", "ExactMatch molekülü: Chain of Responsibility, Factory Method, Registry, Builder"),

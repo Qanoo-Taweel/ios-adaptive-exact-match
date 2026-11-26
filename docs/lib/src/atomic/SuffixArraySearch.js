@@ -5,7 +5,7 @@ import { suffixArrayFeatures } from '../functions/costs.js';
 
 /**
  * SuffixArraySearch: index the TEXT once (prefix doubling), then answer every
- * pattern by binary search. Brief group D. Pays O(n log n) up front, so it
+ * pattern by binary search. Assignment group D. Pays O(n log n) up front, so it
  * only wins with many patterns on a short text.
  * Algorithm core: src/functions/suffixArray.js
  *

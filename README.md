@@ -105,11 +105,10 @@ docs/              GitHub Pages sitesi, rapor, UML, şekiller
 
 ## Grup üyeleri ve katkılar
 
-Bu proje bireysel olarak hazırlanmıştır.
-
-| Üye | Katkı |
-|---|---|
-| Qanoo Taweel ([@Qanoo-Taweel](https://github.com/Qanoo-Taweel)) | Bütün bileşenler: atomlar, molekül, seçim yöntemi, testler, kalibrasyon/doğrulama, rapor, UML, site |
+| Üye | Öğrenci no | Katkı |
+|---|---|---|
+| Qunoo A K Taweel ([@Qanoo-Taweel](https://github.com/Qanoo-Taweel)) | 23291712 | Atomlar, molekül ve seçim yöntemi, testler, kalibrasyon ve doğrulama, rapor, UML, site (ortak çalışma) |
+| Zeynep Arıcan | 24290319 | Atomlar, molekül ve seçim yöntemi, testler, kalibrasyon ve doğrulama, rapor, UML, site (ortak çalışma) |
 
 Yapay zekâ kullanımı: kodlama, test ve belgelemede Claude Code (Anthropic) asistan olarak kullanılmıştır; ayrıntı raporun "Kaynaklar ve araçlar" bölümündedir.
 

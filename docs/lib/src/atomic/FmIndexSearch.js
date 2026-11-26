@@ -4,7 +4,7 @@ import { buildFMIndex, searchFMIndex } from '../functions/fmIndex.js';
 import { fmIndexFeatures } from '../functions/costs.js';
 
 /**
- * FmIndexSearch: BWT + backward search. Brief group D (bonus atom).
+ * FmIndexSearch: BWT + backward search. Assignment group D (bonus atom).
  * Counting a pattern costs O(m) whatever n is; building the index costs the
  * suffix array plus O(n). Algorithm core: src/functions/fmIndex.js
  *

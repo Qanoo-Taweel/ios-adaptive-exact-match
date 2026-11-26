@@ -5,7 +5,7 @@ import { rabinKarpFeatures } from '../functions/costs.js';
 
 /**
  * RabinKarpSearch: rolling hash, one pass per distinct pattern LENGTH
- * (all patterns of that length share it). Brief group B.
+ * (all patterns of that length share it). Assignment group B.
  * Equal hashes are always verified. Algorithm core: src/functions/rabinKarp.js
  *
  * PATTERN: Strategy + Template Method (see ExactSearchAtom).

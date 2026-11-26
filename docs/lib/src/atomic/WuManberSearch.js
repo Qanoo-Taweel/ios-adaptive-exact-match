@@ -4,7 +4,7 @@ import { prepareWuManber, searchWuManber } from '../functions/wuManber.js';
 import { wuManberFeatures } from '../functions/costs.js';
 
 /**
- * WuManberSearch: multi-pattern block-shift search. Brief group C (bonus atom).
+ * WuManberSearch: multi-pattern block-shift search. Assignment group C (bonus atom).
  * Sublinear like Boyer-Moore while serving many patterns at once; weakens
  * when the shortest pattern is very short (the shift is limited by it).
  * Algorithm core: src/functions/wuManber.js

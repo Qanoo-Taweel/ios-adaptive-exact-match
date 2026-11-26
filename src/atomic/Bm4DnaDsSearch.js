@@ -5,7 +5,7 @@ import { horspoolFeatures } from '../functions/costs.js';
 
 /**
  * Bm4DnaDsSearch: Sentinel + 3× unrolled skip loop. Allmer recommends it for short DNA patterns (m < 50).
- * Brief group: A. Algorithm core: src/functions/bm4DNADS.js
+ * Assignment group: A. Algorithm core: src/functions/bm4DNADS.js
  *
  * PATTERN: Strategy (concrete strategy of ExactSearchAtom) +
  *          Template Method (fills the prepare/search hooks only).

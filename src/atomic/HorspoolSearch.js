@@ -5,7 +5,7 @@ import { horspoolFeatures } from '../functions/costs.js';
 
 /**
  * HorspoolSearch: Bad-character shift on the last window character only. Strong on medium/long patterns over larger alphabets.
- * Brief group: A. Algorithm core: src/functions/horspool.js
+ * Assignment group: A. Algorithm core: src/functions/horspool.js
  *
  * PATTERN: Strategy (concrete strategy of ExactSearchAtom) +
  *          Template Method (fills the prepare/search hooks only).

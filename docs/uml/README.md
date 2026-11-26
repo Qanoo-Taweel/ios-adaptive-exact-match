@@ -1,6 +1,6 @@
 # UML diagrams
 
-Rendered images (`.png`, `.svg`) are generated from the Mermaid sources (`.mmd`) with `node scripts/render-uml.mjs <mermaid.min.js>`. The same full class diagram is also available as PlantUML: [`class-diagram.puml`](class-diagram.puml). For drawing by hand, see [`hand-drawable.md`](hand-drawable.md).
+Rendered images (`.png`, `.svg`) are generated from the Mermaid sources (`.mmd`) with `node scripts/render-uml.mjs <mermaid.min.js>`. The same full class diagram is also available as PlantUML: [`class-diagram.puml`](class-diagram.puml). A text version of the simplified diagram with class responsibilities is in [`core-classes.md`](core-classes.md).
 
 | Diagram | Image | Source |
 |---|---|---|
@@ -10,7 +10,7 @@ Rendered images (`.png`, `.svg`) are generated from the Mermaid sources (`.mmd`)
 | Molecule and selection (Chain of Responsibility, Factory Method, Registry, Builder) | [png](03-molecule.png) · [svg](03-molecule.svg) | [03-molecule.mmd](03-molecule.mmd) |
 | CLI (Facade + Command) | [png](04-cli.png) · [svg](04-cli.svg) | [04-cli.mmd](04-cli.mmd) |
 | Sequence diagram: explain | [png](05-sequence-explain.png) · [svg](05-sequence-explain.svg) | [05-sequence-explain.mmd](05-sequence-explain.mmd) |
-| Hand-drawable version | [png](06-hand-drawable.png) · [svg](06-hand-drawable.svg) | [06-hand-drawable.mmd](06-hand-drawable.mmd) |
+| Core classes (simplified, 9 classes) | [png](06-core-classes.png) · [svg](06-core-classes.svg) | [06-core-classes.mmd](06-core-classes.mmd) |
 
 GitHub renders the Mermaid sources directly:
 
@@ -494,11 +494,11 @@ sequenceDiagram
   C-->>User: JSON on stdout
 ```
 
-## Hand-drawable version
+## Core classes (simplified)
 
 ```mermaid
 ---
-title: Hand-drawable version (9 boxes, all key methods) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
+title: Core classes (simplified class diagram, 9 classes) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction TB

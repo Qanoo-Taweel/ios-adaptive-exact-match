@@ -15,7 +15,7 @@ import { prepareKMP } from '../../src/functions/kmp.js';
 const check = (A, seq, pats, ic = false) =>
   assert.deepEqual(runAtom(A, E(seq), pats, ic), indexOfReference(E(seq), pats, ic));
 
-/** Edge cases every atom must handle (≥ 5 per atom, as the brief asks). */
+/** Edge cases every atom must handle (≥ 5 per atom, as the assignment asks). */
 const SHARED = [
   ['periodic pattern ABAB in periodic text', 'ABABABABAB', ['ABAB']],
   ['single-character pattern', 'GATTACA', ['A']],

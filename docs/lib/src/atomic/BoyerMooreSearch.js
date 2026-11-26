@@ -4,8 +4,8 @@ import { prepareBoyerMoore, searchBoyerMoore } from '../functions/boyerMoore.js'
 import { boyerMooreFeatures } from '../functions/costs.js';
 
 /**
- * BoyerMooreSearch: Bad character + strong good suffix. The complete example atom of the starter package.
- * Brief group: given example. Algorithm core: src/functions/boyerMoore.js
+ * BoyerMooreSearch: Bad character + strong good suffix. The example atom provided with the assignment.
+ * Assignment group: given example. Algorithm core: src/functions/boyerMoore.js
  *
  * PATTERN: Strategy (concrete strategy of ExactSearchAtom) +
  *          Template Method (fills the prepare/search hooks only).

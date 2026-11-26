@@ -4,7 +4,7 @@ import { prepareAhoCorasick, searchAhoCorasick } from '../functions/ahoCorasick.
 import { ahoCorasickFeatures } from '../functions/costs.js';
 
 /**
- * AhoCorasickSearch: all patterns in one pass through a DFA. Brief group C.
+ * AhoCorasickSearch: all patterns in one pass through a DFA. Assignment group C.
  * Cost is independent of k during the scan, so it wins with many patterns.
  * Algorithm core: src/functions/ahoCorasick.js
  *

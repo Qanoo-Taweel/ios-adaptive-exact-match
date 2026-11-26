@@ -4,7 +4,7 @@
  * Multi-pattern form: patterns are grouped by length; one rolling hash per
  * distinct length serves every pattern of that length through an open-
  * addressing hash table. Equal hashes are ALWAYS verified character by
- * character (the brief's "eşit özetlerde doğrulama şart"), so collisions can
+ * character (the assignment's "eşit özetlerde doğrulama şart"), so collisions can
  * cost time but never correctness.
  */
 const BASE = 0x01000193; // FNV prime, odd → invertible mod 2^32

@@ -5,7 +5,7 @@ import { hmbsFeatures } from '../functions/costs.js';
 
 /**
  * Bm4DnaHmbsSearch: Shifts on bit-packed q-grams; long jumps on small alphabets (DNA) where single characters shift poorly.
- * Brief group: A. Algorithm core: src/functions/bm4DNAHMbs.js
+ * Assignment group: A. Algorithm core: src/functions/bm4DNAHMbs.js
  *
  * PATTERN: Strategy (concrete strategy of ExactSearchAtom) +
  *          Template Method (fills the prepare/search hooks only).

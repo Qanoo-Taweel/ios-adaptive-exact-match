@@ -4,7 +4,7 @@ import { prepareKMP, searchKMP } from '../functions/kmp.js';
 import { kmpFeatures } from '../functions/costs.js';
 
 /**
- * KmpSearch: Knuth-Morris-Pratt. Brief group B. Linear worst case, never
+ * KmpSearch: Knuth-Morris-Pratt. Assignment group B. Linear worst case, never
  * re-reads the text; wins on highly periodic text where shift-based
  * algorithms collapse to shift 1. Algorithm core: src/functions/kmp.js
  *

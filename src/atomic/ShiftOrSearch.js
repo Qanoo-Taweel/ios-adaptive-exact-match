@@ -4,7 +4,7 @@ import { prepareShiftOr, searchShiftOr } from '../functions/shiftOr.js';
 import { shiftOrFeatures } from '../functions/costs.js';
 
 /**
- * ShiftOrSearch: bit-parallel Shift-Or. Brief group A.
+ * ShiftOrSearch: bit-parallel Shift-Or. Assignment group A.
  * One pass per 32-bit word; short patterns are packed several per word.
  * Algorithm core: src/functions/shiftOr.js
  *
