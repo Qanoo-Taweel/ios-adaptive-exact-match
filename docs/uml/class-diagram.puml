@@ -50,6 +50,8 @@ class HitCollector {
   -keys : Float64Array
   +add(unique, position) : void
   +ordered() : Iterable<[pos, idx]>
+
+  +count : number {readOnly}
 }
 ExactSearchAtom ..> HitCollector : creates
 
@@ -74,6 +76,7 @@ package "src/molecules + src/selection" {
     +names() : string[]
     +atoms() : AtomClass[]
     +clone() : AtomRegistry
+    +size : number {readOnly}
   }
   class AtomFactory {
     +create(name, params) : ExactSearchAtom
@@ -81,6 +84,8 @@ package "src/molecules + src/selection" {
   class CostModel {
     +coefficientsFor(AtomClass) : Coef
     +estimate(AtomClass, shape) : Estimate
+    +version : string {readOnly}
+    +{static} expectedRecords(shape) : number
   }
   class ShapeBuilder {
     +withPatterns(patterns, ignoreCase) : ShapeBuilder

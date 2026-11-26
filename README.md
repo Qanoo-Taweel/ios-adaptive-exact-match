@@ -1,11 +1,13 @@
 # IoS · `sequence.pattern-match.exact` — adaptive exact pattern matching
 
+**Hazırlayanlar:** Qunoo A K Taweel (23291712) · Zeynep Arıcan (24290319)
+
 Internet of Science (IoS) bileşeni: **12 tam eşleştirme atomu** ve girdinin
 şekline bakıp en hızlı atomu seçen, **kalibre edilmiş maliyet modelli
 `ExactMatch` molekülü**. Saf JavaScript, Node.js ≥ 22, ES modülleri,
 **sıfır bağımlılık**.
 
-**Site:** https://qanoo-taweel.github.io/ios-adaptive-exact-match/ · **Rapor (PDF):** [`docs/report/Rapor.pdf`](docs/report/Rapor.pdf) · **UML:** [`docs/uml/`](docs/uml/) · **Tasarım desenleri:** [`docs/design-patterns.md`](docs/design-patterns.md)
+**Site:** https://qanoo-taweel.github.io/ios-adaptive-exact-match/ · **Rapor (PDF):** [`docs/report/Rapor.pdf`](docs/report/Rapor.pdf) · **UML:** [`docs/uml/`](docs/uml/) ([yazdırmaya hazır PDF](docs/uml/UML-diagrams.pdf)) · **Tasarım desenleri:** [`docs/design-patterns.md`](docs/design-patterns.md)
 
 | | |
 |---|---|

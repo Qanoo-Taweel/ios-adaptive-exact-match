@@ -1,5 +1,5 @@
 ---
-title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry, Builder
+title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry, Builder — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction LR
@@ -23,6 +23,7 @@ classDiagram
     +names() string[]
     +atoms() AtomClass[]
     +clone() AtomRegistry
+    +size number
   }
   class AtomFactory {
     +registry AtomRegistry
@@ -32,6 +33,8 @@ classDiagram
     +calibration Calibration
     +coefficientsFor(AtomClass) Coef
     +estimate(AtomClass, shape) Estimate
+    +version string
+    +expectedRecords(shape)$ number
   }
   class ShapeBuilder {
     +withPatterns(patterns, ignoreCase) ShapeBuilder

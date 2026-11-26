@@ -24,9 +24,12 @@
   code, .mono { font-family: 'JetBrains Mono', 'DejaVu Sans Mono', monospace; font-size: 7.8pt; }
   pre { font-family: 'JetBrains Mono', monospace; font-size: 7.6pt; background: #f5f5f2; padding: 6px 8px; border-radius: 4px; overflow-x: auto; margin: 4px 0 8px; white-space: pre-wrap; }
   figure { margin: 6px 0 8px; break-inside: avoid; }
+  h2, h3 { break-after: avoid; page-break-after: avoid; }
   figure svg { width: 100%; height: auto; display: block; }
   figcaption { font-size: 7.8pt; color: var(--ink2); margin-top: 2px; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .two { display: grid; grid-template-columns: 1fr; gap: 6px; }
+  .two figure svg { width: 84%; margin: 0 auto; }
+  table { break-inside: avoid; }
   .note { font-size: 8pt; color: var(--ink2); }
   .appendix { break-before: page; }
   .avoid { break-inside: avoid; }
@@ -36,7 +39,7 @@
 
 <div class="kicker">IoS bileşen yayını · sequence.pattern-match.exact</div>
 <h1>ExactMatch: girdinin şekline göre en hızlı tam eşleştirme atomunu seçen molekül</h1>
-<div class="meta">Qanoo Taweel · YZM327 Vize projesi (Ödev 3) · Kasım 2026 · Kod: github.com/Qanoo-Taweel/ios-adaptive-exact-match</div>
+<div class="meta">Qunoo A K Taweel (23291712) · Zeynep Arıcan (24290319) · YZM327 Vize projesi (Ödev 3) · Kasım 2026 · Kod: github.com/Qanoo-Taweel/ios-adaptive-exact-match</div>
 
 <div class="abstract"><p><b>Özet.</b> On iki tam eşleştirme atomu (on tanesi yeni: Horspool, bm4DNADS, bm4DNAHMbs, Shift-Or, KMP, Rabin-Karp, Aho-Corasick, Wu-Manber, suffix array, FM-index) ve bunlar arasından seçim yapan bir <code>ExactMatch</code> molekülü yazdık. Molekül, ilk kaydın karakter frekanslarından ve gerçek desenlerden her atom için beklenen işlem sayılarını hesaplar; bunları 240 vakalık kalibrasyon ızgarasında ölçülen katsayılarla çarpar ve en ucuz atomu seçer. Kalibrasyonda kullanılmayan 184 vakada (üç yeni alfabe ve gerçek veri dahil) molekülün geometrik ortalama yavaşlaması <b>1,095</b>; Allmer 2016 kuralı 2,298, en iyi sabit atom (hep WuManber) 1,207. Bütün atomlar 518 testte NaiveSearch oracle'ı ile eleman eleman aynı sonucu verir.</p></div>
 
@@ -600,7 +603,7 @@ node bin/ios.js run ExactMatch --patterns MKK --strategy AhoCorasickSearch &lt; 
 <p>Kütüphane olarak: <code>new ExactMatch({ patterns, ignoreCase, strategy: 'auto' }).run(entries)</code>; yeni atom: <code>registerAtom(MyAtom)</code>.</p>
 
 <h2>Kaynaklar ve araçlar</h2>
-<p class="note">Allmer J. (2016) PeerJ PrePrints 4:e1758v1 · Boyer &amp; Moore (1977) CACM 20(10) · Horspool (1980) SP&amp;E 10(6) · Hume &amp; Sunday (1991) SP&amp;E 21(11) · Knuth, Morris &amp; Pratt (1977) SIAM J. Comput. 6(2) · Karp &amp; Rabin (1987) IBM J. R&amp;D 31(2) · Baeza-Yates &amp; Gonnet (1992) CACM 35(10) · Aho &amp; Corasick (1975) CACM 18(6) · Wu &amp; Manber (1994) TR-94-17 · Manber &amp; Myers (1993) SIAM J. Comput. 22(5) · Ferragina &amp; Manzini (2000) FOCS · Charras &amp; Lecroq, Exact String Matching Algorithms · Internet of Science, hub.ioscience.org/p/learn/. Veri: NCBI RefSeq NC_001416.1; UniProtKB/Swiss-Prot (E. coli K-12, OX=83333). <b>Yapay zekâ kullanımı:</b> kodlama, test yazımı, ölçüm betikleri ve belgelerin hazırlanmasında Claude Code (Anthropic) asistan olarak kullanılmıştır; tasarım kararları, sonuçlar ve bu rapor öğrenci tarafından gözden geçirilmiştir.</p>
+<p class="note">Allmer J. (2016) PeerJ PrePrints 4:e1758v1 · Boyer &amp; Moore (1977) CACM 20(10) · Horspool (1980) SP&amp;E 10(6) · Hume &amp; Sunday (1991) SP&amp;E 21(11) · Knuth, Morris &amp; Pratt (1977) SIAM J. Comput. 6(2) · Karp &amp; Rabin (1987) IBM J. R&amp;D 31(2) · Baeza-Yates &amp; Gonnet (1992) CACM 35(10) · Aho &amp; Corasick (1975) CACM 18(6) · Wu &amp; Manber (1994) TR-94-17 · Manber &amp; Myers (1993) SIAM J. Comput. 22(5) · Ferragina &amp; Manzini (2000) FOCS · Charras &amp; Lecroq, Exact String Matching Algorithms · Internet of Science, hub.ioscience.org/p/learn/. Veri: NCBI RefSeq NC_001416.1; UniProtKB/Swiss-Prot (E. coli K-12, OX=83333). <b>Yapay zekâ kullanımı:</b> kodlama, test yazımı, ölçüm betikleri ve belgelerin hazırlanmasında Claude Code (Anthropic) asistan olarak kullanılmıştır; tasarım kararları, sonuçlar ve bu rapor öğrenciler tarafından gözden geçirilmiştir.</p>
 
 <section class="appendix">
 <h2>Ek A. Doğrulama tabloları (bütün politikalar)</h2>

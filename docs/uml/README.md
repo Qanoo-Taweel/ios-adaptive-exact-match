@@ -18,7 +18,7 @@ GitHub renders the Mermaid sources directly:
 
 ```mermaid
 ---
-title: Full class diagram (all classes, methods and relations)
+title: Full class diagram (all classes, methods and relations) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction TB
@@ -41,6 +41,7 @@ classDiagram
     -keys Float64Array
     +add(unique, position) void
     +ordered() Iterable~pair~
+    +count number
   }
   class NaiveSearch { +findAll(text, hits) }
   class BoyerMooreSearch {
@@ -121,6 +122,7 @@ classDiagram
     +names() string[]
     +atoms() AtomClass[]
     +clone() AtomRegistry
+    +size number
   }
   class AtomFactory {
     +registry AtomRegistry
@@ -130,6 +132,8 @@ classDiagram
     +calibration Calibration
     +coefficientsFor(AtomClass) Coef
     +estimate(AtomClass, shape) Estimate
+    +version string
+    +expectedRecords(shape)$ number
   }
   class ShapeBuilder {
     +withPatterns(patterns, ignoreCase) ShapeBuilder
@@ -187,6 +191,7 @@ classDiagram
     <<module>>
     +parseFasta(text) Iterable~Entry~
     +readFasta(text) Entry[]
+    +formatFasta(entries, width) string
   }
   Command <|-- RunCommand
   Command <|-- ExplainCommand
@@ -205,7 +210,7 @@ classDiagram
 
 ```mermaid
 ---
-title: Architecture overview (IoS layers)
+title: Architecture overview (IoS layers) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 flowchart LR
   subgraph CLI["Interface layer"]
@@ -240,7 +245,7 @@ flowchart LR
 
 ```mermaid
 ---
-title: Atoms — Template Method + Strategy
+title: Atoms — Template Method + Strategy — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction TB
@@ -263,6 +268,7 @@ classDiagram
     -keys Float64Array
     +add(unique, position) void
     +ordered() Iterable~pair~
+    +count number
   }
   class NaiveSearch { +findAll(text, hits) }
   class BoyerMooreSearch {
@@ -329,7 +335,7 @@ classDiagram
 
 ```mermaid
 ---
-title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry, Builder
+title: ExactMatch molecule — Chain of Responsibility, Factory Method, Registry, Builder — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction LR
@@ -353,6 +359,7 @@ classDiagram
     +names() string[]
     +atoms() AtomClass[]
     +clone() AtomRegistry
+    +size number
   }
   class AtomFactory {
     +registry AtomRegistry
@@ -362,6 +369,8 @@ classDiagram
     +calibration Calibration
     +coefficientsFor(AtomClass) Coef
     +estimate(AtomClass, shape) Estimate
+    +version string
+    +expectedRecords(shape)$ number
   }
   class ShapeBuilder {
     +withPatterns(patterns, ignoreCase) ShapeBuilder
@@ -401,7 +410,7 @@ classDiagram
 
 ```mermaid
 ---
-title: Command line — Facade + Command + Factory Method
+title: Command line — Facade + Command + Factory Method — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction LR
@@ -430,6 +439,7 @@ classDiagram
     <<module>>
     +parseFasta(text) Iterable~Entry~
     +readFasta(text) Entry[]
+    +formatFasta(entries, width) string
   }
   class ExactMatch
   Command <|-- RunCommand
@@ -449,7 +459,7 @@ classDiagram
 
 ```mermaid
 ---
-title: "Sequence: node bin/ios.js explain --patterns ACGT,GGCC < in.fasta"
+title: "Sequence: node bin/ios.js explain --patterns ACGT,GGCC < in.fasta — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)"
 ---
 sequenceDiagram
   autonumber
@@ -488,7 +498,7 @@ sequenceDiagram
 
 ```mermaid
 ---
-title: Hand-drawable version (9 boxes, all key methods)
+title: Hand-drawable version (9 boxes, all key methods) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction TB

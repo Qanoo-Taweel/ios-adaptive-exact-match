@@ -1,5 +1,5 @@
 ---
-title: Full class diagram (all classes, methods and relations)
+title: Full class diagram (all classes, methods and relations) — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction TB
@@ -22,6 +22,7 @@ classDiagram
     -keys Float64Array
     +add(unique, position) void
     +ordered() Iterable~pair~
+    +count number
   }
   class NaiveSearch { +findAll(text, hits) }
   class BoyerMooreSearch {
@@ -102,6 +103,7 @@ classDiagram
     +names() string[]
     +atoms() AtomClass[]
     +clone() AtomRegistry
+    +size number
   }
   class AtomFactory {
     +registry AtomRegistry
@@ -111,6 +113,8 @@ classDiagram
     +calibration Calibration
     +coefficientsFor(AtomClass) Coef
     +estimate(AtomClass, shape) Estimate
+    +version string
+    +expectedRecords(shape)$ number
   }
   class ShapeBuilder {
     +withPatterns(patterns, ignoreCase) ShapeBuilder
@@ -168,6 +172,7 @@ classDiagram
     <<module>>
     +parseFasta(text) Iterable~Entry~
     +readFasta(text) Entry[]
+    +formatFasta(entries, width) string
   }
   Command <|-- RunCommand
   Command <|-- ExplainCommand

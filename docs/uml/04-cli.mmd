@@ -1,5 +1,5 @@
 ---
-title: Command line — Facade + Command + Factory Method
+title: Command line — Facade + Command + Factory Method — Qunoo A K Taweel (23291712), Zeynep Arıcan (24290319)
 ---
 classDiagram
   direction LR
@@ -28,6 +28,7 @@ classDiagram
     <<module>>
     +parseFasta(text) Iterable~Entry~
     +readFasta(text) Entry[]
+    +formatFasta(entries, width) string
   }
   class ExactMatch
   Command <|-- RunCommand
