@@ -7,7 +7,7 @@ Internet of Science (IoS) bileşeni: **12 tam eşleştirme atomu** ve girdinin
 `ExactMatch` molekülü**. Saf JavaScript, Node.js ≥ 22, ES modülleri,
 **sıfır bağımlılık**.
 
-**Site:** https://qanoo-taweel.github.io/ios-adaptive-exact-match/ · **Rapor (PDF):** [`docs/report/Rapor.pdf`](docs/report/Rapor.pdf) · **UML:** [`docs/uml/`](docs/uml/) ([yazdırmaya hazır PDF](docs/uml/UML-diagrams.pdf)) · **Tasarım desenleri:** [`docs/design-patterns.md`](docs/design-patterns.md)
+**Site:** https://qanoo-taweel.github.io/ios-adaptive-exact-match/ · **Çalışma alanı (IoS tarzı iş akışı arayüzü):** [`workbench.html`](https://qanoo-taweel.github.io/ios-adaptive-exact-match/workbench.html) · **Rapor (PDF):** [`docs/report/Rapor.pdf`](docs/report/Rapor.pdf) · **UML:** [`docs/uml/`](docs/uml/) ([yazdırmaya hazır PDF](docs/uml/UML-diagrams.pdf)) · **Tasarım desenleri:** [`docs/design-patterns.md`](docs/design-patterns.md)
 
 | | |
 |---|---|

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExactMatch Çalışma Alanı</title>
+<meta name="description" content="ExactMatch molekülü ve 12 tam eşleştirme atomu için IoS tarzı iş akışı arayüzü: bileşen ağacı, iş akışı tuvali, özellikler paneli; tarayıcıda çalışır.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c5cab'/%3E%3Cpath d='M8 11h16M8 16h10M8 21h13' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/workbench.css">
+</head>
+<body>
+<header class="bar">
+  <button class="icon" id="menuBtn" type="button" aria-label="Menüyü aç/kapat" title="Menü">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+  </button>
+  <a class="brand" href="index.html" title="Proje sayfası"><span class="logo" aria-hidden="true"></span>IoS<span class="brand-sub">ExactMatch</span></a>
+  <label class="search">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="M13.2 13.2 17 17"/></svg>
+    <input id="search" type="search" placeholder="Bileşen ara: atom, molekül, grup…" autocomplete="off" aria-label="Bileşen ara">
+    <kbd>Ctrl K</kbd>
+  </label>
+  <div class="bar-right">
+    <button class="btn primary" id="newBtn" type="button"><span aria-hidden="true">＋</span> Yeni iş akışı</button>
+    <button class="icon" id="themeBtn" type="button" aria-label="Tema değiştir" title="Tema değiştir">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 12.5A6.5 6.5 0 0 1 7.5 4a6.5 6.5 0 1 0 8.5 8.5Z"/></svg>
+    </button>
+    <a class="btn ghost hide-sm" href="index.html">Proje sayfası</a>
+    <button class="icon" id="propsBtn" type="button" aria-label="Özellikler panelini aç/kapat" title="Özellikler paneli">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3.5" width="14" height="13" rx="2"/><path d="M12 3.5v13"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="shell" id="shell">
+  <nav class="rail" id="rail" aria-label="Gezinme">
+    <p class="rail-h">Çalışma alanı</p>
+    <a href="index.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/></svg>Ana sayfa</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg>Bileşenler</a>
+    <a href="report/Rapor.pdf"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h7l3.5 3.5v11.5h-10.5Z"/><path d="M8 10h5M8 13h5"/></svg>Belgeler</a>
+    <a href="#" id="railWorkflow"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="5" cy="5" r="2"/><circle cx="15" cy="15" r="2"/><path d="M7 5h4a2 2 0 0 1 2 2v6"/></svg>İş akışları</a>
+    <p class="rail-h">Keşfet</p>
+    <a href="index.html#sonuclar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V9M8 17V4M13 17v-6M18 17H2"/></svg>Sonuçlar</a>
+    <a href="index.html#uml"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="8" height="5" rx="1"/><rect x="9" y="12" width="8" height="5" rx="1"/><path d="M7 8v6.5h2"/></svg>UML</a>
+    <a href="index.html#desenler"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12H4Z"/><path d="M4 10h12M10 4v12"/></svg>Tasarım desenleri</a>
+    <a href="https://github.com/Qanoo-Taweel/ios-adaptive-exact-match"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 6 3 10l4 4M13 6l4 4-4 4"/></svg>Kaynak kod</a>
+    <div class="rail-foot">
+      <p>Qunoo A K Taweel<br>Zeynep Arıcan</p>
+    </div>
+  </nav>
+
+  <aside class="tree" id="tree" aria-label="Bileşenler">
+    <div class="tree-top">
+      <span class="tree-title"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg>Bileşenler</span>
+      <span class="count" id="treeCount"></span>
+    </div>
+    <label class="filter"><span>Filtre</span><input id="filter" type="search" placeholder="Ada veya gruba göre filtrele…" autocomplete="off"></label>
+    <div class="tree-body" id="treeBody"></div>
+    <p class="tree-hint">Bir bileşeni tuvaldeki orta düğümün üzerine sürükleyin ya da çift tıklayın.</p>
+  </aside>
+
+  <main class="work">
+    <div class="tabs" role="tablist">
+      <button class="tab on" type="button" role="tab" aria-selected="true"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="5" cy="5" r="2"/><circle cx="15" cy="15" r="2"/><path d="M7 5h4a2 2 0 0 1 2 2v6"/></svg>İş akışı <span class="dirty" id="dirty" title="Kaydedilmemiş değişiklik">●</span></button>
+      <a class="tab" href="index.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 9.5 10 4l7 5.5V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z"/></svg>Ana sayfa</a>
+    </div>
+    <div class="toolbar">
+      <input class="wf-name" id="wfName" value="Lambda: EcoRI + BamHI" aria-label="İş akışı adı">
+      <label class="target">Hedef
+        <select id="target" aria-label="Çalışma hedefi"><option>Tarayıcı</option></select>
+      </label>
+      <button class="btn primary" id="runBtn" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4v12l10-6Z"/></svg>Tarayıcıda çalıştır</button>
+      <span class="pill" id="status"><i></i><span>çalışmadı</span></span>
+      <button class="btn ghost" id="explainBtn" type="button" title="Yalnızca kararı hesapla (explain)"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 9v5M10 6.5v.01"/></svg>Açıkla</button>
+      <button class="btn ghost" id="benchBtn" type="button" title="Her atomu bu girdide ölç ve tahminle karşılaştır"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17V9M8 17V4M13 17v-6M18 17H2"/></svg>Bütün atomları ölç</button>
+    </div>
+
+    <div class="canvas" id="canvas">
+      <div class="zoom">
+        <button type="button" id="zoomOut" aria-label="Uzaklaştır">−</button>
+        <span id="zoomVal">100 %</span>
+        <button type="button" id="zoomIn" aria-label="Yakınlaştır">+</button>
+        <button type="button" id="zoomFit">Sığdır</button>
+      </div>
+      <div class="world" id="world">
+        <svg class="edges" id="edges" aria-hidden="true"></svg>
+      </div>
+      <div class="toast" id="toast" hidden></div>
+    </div>
+  </main>
+
+  <aside class="props" id="props" aria-label="Özellikler">
+    <div class="props-top"><span><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3.5" width="14" height="13" rx="2"/><path d="M12 3.5v13"/></svg>Özellikler</span>
+      <button class="icon sm" id="propsClose" type="button" aria-label="Paneli kapat">›</button></div>
+    <div class="props-head" id="propsHead"></div>
+    <div class="ptabs" role="tablist">
+      <button type="button" role="tab" data-pt="main" aria-selected="true">Özellikler</button>
+      <button type="button" role="tab" data-pt="adv" aria-selected="false">Gelişmiş</button>
+    </div>
+    <div class="props-body" id="propsBody"></div>
+  </aside>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+
+<script type="module" src="assets/workbench.js"></script>
+</body>
+</html>
