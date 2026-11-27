@@ -13,6 +13,7 @@
     "bench": "node bench/validate.js",
     "figures": "node bench/figures.js",
     "site": "node scripts/build-site.js",
-    "report": "node scripts/build-report.js"
+    "report": "node scripts/build-report.js",
+    "report:en": "node scripts/build-report-en.js"
   }
 }
